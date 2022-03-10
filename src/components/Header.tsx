@@ -1,22 +1,39 @@
-import React from "react";
-// import { useState } from "react";
-// import { useEffect } from "react";
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+import Icon from './image/search.png';
 
 const Header: React.FC = () => {
-  // const [ title, setTitle ] = useState<string>("→この文章を消して大会名や部門名を入力←")
-
-  // useEffect(() => {
-  //   // Update the document title using the browser API
-  //   if (title === "→この文章を消して大会名や部門名を入力←") {
-  //     document.title = "2setMatch";
-  //   } else {
-  //     document.title = title;
-  //   }
-  // });
-
   return (
-    <div className="Header">
-      <div className="WebTitle">2setMatch</div>
+    <div className='Header'>
+      <div className='HeaderContainer'>
+        <div className='WebTitle'>2setMatch</div>
+        <ul className='HeaderLink'>
+          <li className='HeaderLink__item'>
+            <Link to='/' className='HeaderLink__text'>
+              Home
+            </Link>
+          </li>
+          <li className='HeaderLink__item'>
+            <Link to='/top' className='HeaderLink__text'>
+              TOP
+            </Link>
+          </li>
+          <li className='HeaderLink__item'>
+            <Link to='/test' className='HeaderLink__text'>
+              TEST
+            </Link>
+          </li>
+        </ul>
+        <div className='HeaderRight'>
+          <div className='search'>
+            <img className='icon' src={Icon} alt='アイコン' />
+          </div>
+          <div className='account'>
+            <a className='circle'>TH</a>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

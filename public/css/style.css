@@ -80,9 +80,8 @@ button {
   background-color: #73a1cd;
   width: 100%;
   display: flex;
-  box-shadow: inset 0px 0px 0 rgba(255, 255, 255, 0.3), 0px 1px 3px rgba(0, 0, 0, 0.2);
   z-index: 100;
-  min-width: 1200px;
+  min-width: 960px;
   position: relative;
 }
 @media screen and (max-width: 600px) {
@@ -92,45 +91,21 @@ button {
     height: auto;
   }
 }
-.Header .HeaderTitle {
-  width: 21em;
-  cursor: pointer;
-  border: none;
-  background-color: #73a1cd;
-  margin-left: 5em;
-  height: 48px;
-  line-height: 24px;
-  display: block;
-  appearance: none;
-  outline: none;
-  color: #fff;
-  font-size: 2em;
-  font-family: "Yomogi", cursive;
-  text-align: center;
-  text-shadow: 1px 1px 0px rgba(86, 89, 108, 0.94);
+.Header .HeaderContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
-@media screen and (max-width: 600px) {
-  .Header .HeaderTitle {
-    margin: auto;
-    font-size: 1em;
-    text-align: center;
-    height: 40px;
-    line-height: 40px;
-    left: 0;
-    width: 100%;
-    position: initial;
-  }
-}
-.Header .WebTitle {
+.Header .HeaderContainer .WebTitle {
   color: #fff;
   font-size: 2em;
   font-family: "Mochiy Pop P One", sans-serif;
   text-shadow: 1px 1px 0px rgba(86, 89, 108, 0.94);
-  margin-left: 1.5em;
-  line-height: 1.4;
+  margin-left: 1em;
+  line-height: 1.5;
 }
 @media screen and (max-width: 600px) {
-  .Header .WebTitle {
+  .Header .HeaderContainer .WebTitle {
     margin: auto;
     font-size: 1.2em;
     text-align: center;
@@ -140,6 +115,54 @@ button {
     width: 100%;
     position: initial;
   }
+}
+.Header .HeaderContainer .HeaderLink {
+  display: flex;
+}
+.Header .HeaderContainer .HeaderLink__item {
+  width: 5rem;
+  margin: auto;
+  text-align: center;
+  height: 100%;
+  line-height: 3rem;
+  transition: 0.5s;
+}
+.Header .HeaderContainer .HeaderLink__item:hover {
+  background-color: #ededed;
+}
+.Header .HeaderContainer .HeaderLink__text {
+  color: #fff;
+  font-weight: bold;
+}
+.Header .HeaderContainer .HeaderLink__text:hover {
+  color: #73a1cd;
+}
+.Header .HeaderContainer .HeaderRight {
+  display: flex;
+}
+.Header .HeaderContainer .HeaderRight .search {
+  width: 2.5em;
+  margin: auto;
+  text-align: center;
+}
+.Header .HeaderContainer .HeaderRight .search .icon {
+  width: 1.5em;
+  display: block;
+  margin: auto;
+}
+.Header .HeaderContainer .HeaderRight .account {
+  width: 3.5em;
+  margin: auto;
+  text-align: center;
+}
+.Header .HeaderContainer .HeaderRight .account .circle {
+  display: inline-block;
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  background: #fff;
+  text-align: center;
+  line-height: 2.5em;
 }
 
 .Cross {
@@ -998,4 +1021,125 @@ button {
     line-height: 1.2;
     font-size: 0.8em;
   }
+}
+
+.Top {
+  min-height: 589px;
+  height: 100%;
+}
+.TopContainer {
+  display: flex;
+  height: 100vh;
+}
+.TopContainer__Left {
+  padding-top: 56px;
+  background-color: #ffffff;
+  box-shadow: 0 0 4px 0 gray;
+  min-width: 17rem;
+  overflow-y: auto;
+  max-height: 100vh;
+}
+@media screen and (max-width: 600px) {
+  .TopContainer__Left {
+    overflow: unset;
+  }
+}
+.TopContainer__Left .TopHead__title {
+  font-size: 1rem;
+  margin: auto;
+  width: auto;
+  font-weight: bold;
+  color: #6c7686;
+  text-align: center;
+  border-bottom: 1px solid #d5d4d4;
+  padding-bottom: 0.5rem;
+}
+.TopContainer__Left .TopHead .TopButton {
+  margin: auto;
+  margin-bottom: 1em;
+}
+.TopContainer__Left .TopHead .TopButton form {
+  width: auto;
+  padding-top: 8px;
+}
+.TopContainer__Left .TopHead .TopButton__name {
+  height: 40px;
+  border: 1px solid #73a1cd;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  width: 15rem;
+  color: #6c7686;
+  font-size: 14px;
+  padding-left: 8px;
+}
+@media screen and (max-width: 600px) {
+  .TopContainer__Left .TopHead .TopButton__name {
+    width: 160px;
+  }
+}
+.TopContainer__Left .TopHead .TopButton__button {
+  background: #73a1cd;
+  font-size: 14px;
+  width: 15rem;
+  height: 30px;
+  line-height: 10px;
+  text-align: center;
+  color: #fff;
+  border: 1px solid #73a1cd;
+  margin: 10px auto;
+  display: block;
+}
+@media screen and (max-width: 600px) {
+  .TopContainer__Left .TopHead .TopButton__button {
+    width: 67px;
+    font-size: 16px;
+    padding-left: 2px;
+    line-height: 17px;
+  }
+}
+.TopContainer__Left .TopHead .TopButton__button:hover {
+  background-color: #ffffff;
+  color: #73a1cd;
+  transition: all 0.5s ease;
+}
+.TopContainer__Left .TopList__item {
+  margin: auto;
+  background-color: #fff;
+  color: #6c7686;
+  text-align: center;
+  width: auto;
+  border-bottom: 1px solid #d5d4d4;
+  height: 3rem;
+}
+.TopContainer__Left .TopList__itemName {
+  display: flex;
+  width: 100%;
+  position: relative;
+  height: 100%;
+  align-items: center;
+}
+.TopContainer__Left .TopList__itemName:hover {
+  background-color: #ededed;
+  color: #fff;
+}
+.TopContainer__Left .TopList__itemName p {
+  color: #6c7686;
+  height: auto;
+  margin-left: 1.5rem;
+  font-size: 0.8rem;
+}
+.TopContainer__Left .TopList__item form {
+  display: block;
+  top: 100%;
+}
+.TopContainer__Right {
+  flex: 1;
+  overflow-y: auto;
+  padding-top: 48px;
+  height: auto;
+}
+
+.App {
+  margin-top: -48px;
 }

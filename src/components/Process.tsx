@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import * as React from "react";
+import { useState, useEffect } from 'react';
+import * as React from 'react';
 // import ExcelJS from "exceljs";
 // import File from "./File";
 // import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd"
@@ -8,14 +8,14 @@ import * as React from "react";
 
 type Pro = {
   id: number;
-  name: any;
+  name: string;
   gross: number;
   point: number;
   score: number;
 };
 
 type Scr = {
-  name: any;
+  name: string;
   time1: number;
   time2: number;
   count: number;
@@ -34,10 +34,10 @@ const Process: React.FC = () => {
   const [drawWin, setDrawWin] = useState<number>(0);
   const [drawDraw, setDrawDraw] = useState<number>(0);
   const [drawLose, setDrawLose] = useState<number>(0);
-  const [sort, setSort] = useState<any>("");
+  const [sort, setSort] = useState<any>('');
 
-  const [title, setTitle] = useState<string>("");
-  const [name, setName] = useState<string>("");
+  const [title, setTitle] = useState<string>('');
+  const [name, setName] = useState<string>('');
 
   const changeTitle = (e: any) => {
     setName(e.target.value);
@@ -49,8 +49,8 @@ const Process: React.FC = () => {
 
   useEffect(() => {
     // Update the document title using the browser API
-    if (title === "") {
-      document.title = "2setMatch";
+    if (title === '') {
+      document.title = '2setMatch';
     } else {
       document.title = title;
     }
@@ -84,7 +84,7 @@ const Process: React.FC = () => {
         score: 0,
       },
     ]);
-    setData("");
+    setData('');
   };
 
   // 対戦表に登録したチームの取り消し
@@ -104,10 +104,7 @@ const Process: React.FC = () => {
   // 対戦表にチームを登録
   const addPlan = (index: number) => {
     const addName: any = list.find((elem) => list[index] === elem);
-    setPlan([
-      ...plan,
-      { name: addName.name, time1: 0, time2: 0, count: 0, marks: 0 },
-    ]);
+    setPlan([...plan, { name: addName.name, time1: 0, time2: 0, count: 0, marks: 0 }]);
     const result: any = plan.filter((plans) => {
       return plans.name === list[index].name;
     });
@@ -122,38 +119,23 @@ const Process: React.FC = () => {
     // 奇数か偶数で処理を変える
     if (index % 2 === 0) {
       const nextPlan: any = plan.find((elem) => plan[index + 1] === elem);
-      targetPlan.count =
-        targetPlan.time1 + targetPlan.time2 - (nextPlan.time1 + nextPlan.time2);
-      nextPlan.count =
-        nextPlan.time1 + nextPlan.time2 - (targetPlan.time1 + targetPlan.time2);
+      targetPlan.count = targetPlan.time1 + targetPlan.time2 - (nextPlan.time1 + nextPlan.time2);
+      nextPlan.count = nextPlan.time1 + nextPlan.time2 - (targetPlan.time1 + targetPlan.time2);
       setCount(targetPlan.count);
-      if (
-        targetPlan.time1 > nextPlan.time1 &&
-        targetPlan.time2 > nextPlan.time2
-      ) {
+      if (targetPlan.time1 > nextPlan.time1 && targetPlan.time2 > nextPlan.time2) {
         targetPlan.marks = Number(win);
         nextPlan.marks = Number(lose);
-      } else if (
-        targetPlan.time1 < nextPlan.time1 &&
-        targetPlan.time2 < nextPlan.time2
-      ) {
+      } else if (targetPlan.time1 < nextPlan.time1 && targetPlan.time2 < nextPlan.time2) {
         targetPlan.marks = Number(lose);
         nextPlan.marks = Number(win);
       } else if (
-        (targetPlan.time1 < nextPlan.time1 &&
-          targetPlan.time2 > nextPlan.time2) ||
+        (targetPlan.time1 < nextPlan.time1 && targetPlan.time2 > nextPlan.time2) ||
         (targetPlan.time1 > nextPlan.time1 && targetPlan.time2 < nextPlan.time2)
       ) {
-        if (
-          targetPlan.time1 + targetPlan.time2 >
-          nextPlan.time1 + nextPlan.time2
-        ) {
+        if (targetPlan.time1 + targetPlan.time2 > nextPlan.time1 + nextPlan.time2) {
           targetPlan.marks = Number(drawWin);
           nextPlan.marks = Number(drawLose);
-        } else if (
-          targetPlan.time1 + targetPlan.time2 <
-          nextPlan.time1 + nextPlan.time2
-        ) {
+        } else if (targetPlan.time1 + targetPlan.time2 < nextPlan.time1 + nextPlan.time2) {
           targetPlan.marks = Number(drawLose);
           nextPlan.marks = Number(drawWin);
         } else {
@@ -166,38 +148,23 @@ const Process: React.FC = () => {
       }
     } else {
       const prevPlan: any = plan.find((elem) => plan[index - 1] === elem);
-      targetPlan.count =
-        targetPlan.time1 + targetPlan.time2 - (prevPlan.time1 + prevPlan.time2);
-      prevPlan.count =
-        prevPlan.time1 + prevPlan.time2 - (targetPlan.time1 + targetPlan.time2);
+      targetPlan.count = targetPlan.time1 + targetPlan.time2 - (prevPlan.time1 + prevPlan.time2);
+      prevPlan.count = prevPlan.time1 + prevPlan.time2 - (targetPlan.time1 + targetPlan.time2);
       setCount(targetPlan.count);
-      if (
-        targetPlan.time1 > prevPlan.time1 &&
-        targetPlan.time2 > prevPlan.time2
-      ) {
+      if (targetPlan.time1 > prevPlan.time1 && targetPlan.time2 > prevPlan.time2) {
         targetPlan.marks = Number(win);
         prevPlan.marks = Number(lose);
-      } else if (
-        targetPlan.time1 < prevPlan.time1 &&
-        targetPlan.time2 < prevPlan.time2
-      ) {
+      } else if (targetPlan.time1 < prevPlan.time1 && targetPlan.time2 < prevPlan.time2) {
         targetPlan.marks = Number(lose);
         prevPlan.marks = Number(win);
       } else if (
-        (targetPlan.time1 < prevPlan.time1 &&
-          targetPlan.time2 > prevPlan.time2) ||
+        (targetPlan.time1 < prevPlan.time1 && targetPlan.time2 > prevPlan.time2) ||
         (targetPlan.time1 > prevPlan.time1 && targetPlan.time2 < prevPlan.time2)
       ) {
-        if (
-          targetPlan.time1 + targetPlan.time2 >
-          prevPlan.time1 + prevPlan.time2
-        ) {
+        if (targetPlan.time1 + targetPlan.time2 > prevPlan.time1 + prevPlan.time2) {
           targetPlan.marks = Number(drawWin);
           prevPlan.marks = Number(drawLose);
-        } else if (
-          targetPlan.time1 + targetPlan.time2 <
-          prevPlan.time1 + prevPlan.time2
-        ) {
+        } else if (targetPlan.time1 + targetPlan.time2 < prevPlan.time1 + prevPlan.time2) {
           targetPlan.marks = Number(drawLose);
           prevPlan.marks = Number(drawWin);
         } else {
@@ -235,7 +202,7 @@ const Process: React.FC = () => {
     }
     // ここまで繰り返し
     // コンソールでエラーを回避
-    console.log("ここからエラー回避");
+    console.log('ここからエラー回避');
     console.log(time1);
     console.log(count);
   };
@@ -246,38 +213,23 @@ const Process: React.FC = () => {
     // 奇数か偶数で処理を変える
     if (index % 2 === 0) {
       const nextPlan: any = plan.find((elem) => plan[index + 1] === elem);
-      targetPlan.count =
-        targetPlan.time1 + targetPlan.time2 - (nextPlan.time1 + nextPlan.time2);
-      nextPlan.count =
-        nextPlan.time1 + nextPlan.time2 - (targetPlan.time1 + targetPlan.time2);
+      targetPlan.count = targetPlan.time1 + targetPlan.time2 - (nextPlan.time1 + nextPlan.time2);
+      nextPlan.count = nextPlan.time1 + nextPlan.time2 - (targetPlan.time1 + targetPlan.time2);
       setCount(targetPlan.count);
-      if (
-        targetPlan.time1 > nextPlan.time1 &&
-        targetPlan.time2 > nextPlan.time2
-      ) {
+      if (targetPlan.time1 > nextPlan.time1 && targetPlan.time2 > nextPlan.time2) {
         targetPlan.marks = Number(win);
         nextPlan.marks = Number(lose);
-      } else if (
-        targetPlan.time1 < nextPlan.time1 &&
-        targetPlan.time2 < nextPlan.time2
-      ) {
+      } else if (targetPlan.time1 < nextPlan.time1 && targetPlan.time2 < nextPlan.time2) {
         targetPlan.marks = Number(lose);
         nextPlan.marks = Number(win);
       } else if (
-        (targetPlan.time1 < nextPlan.time1 &&
-          targetPlan.time2 > nextPlan.time2) ||
+        (targetPlan.time1 < nextPlan.time1 && targetPlan.time2 > nextPlan.time2) ||
         (targetPlan.time1 > nextPlan.time1 && targetPlan.time2 < nextPlan.time2)
       ) {
-        if (
-          targetPlan.time1 + targetPlan.time2 >
-          nextPlan.time1 + nextPlan.time2
-        ) {
+        if (targetPlan.time1 + targetPlan.time2 > nextPlan.time1 + nextPlan.time2) {
           targetPlan.marks = Number(drawWin);
           nextPlan.marks = Number(drawLose);
-        } else if (
-          targetPlan.time1 + targetPlan.time2 <
-          nextPlan.time1 + nextPlan.time2
-        ) {
+        } else if (targetPlan.time1 + targetPlan.time2 < nextPlan.time1 + nextPlan.time2) {
           targetPlan.marks = Number(drawLose);
           nextPlan.marks = Number(drawWin);
         } else {
@@ -290,38 +242,23 @@ const Process: React.FC = () => {
       }
     } else {
       const prevPlan: any = plan.find((elem) => plan[index - 1] === elem);
-      targetPlan.count =
-        targetPlan.time1 + targetPlan.time2 - (prevPlan.time1 + prevPlan.time2);
-      prevPlan.count =
-        prevPlan.time1 + prevPlan.time2 - (targetPlan.time1 + targetPlan.time2);
+      targetPlan.count = targetPlan.time1 + targetPlan.time2 - (prevPlan.time1 + prevPlan.time2);
+      prevPlan.count = prevPlan.time1 + prevPlan.time2 - (targetPlan.time1 + targetPlan.time2);
       setCount(targetPlan.count);
-      if (
-        targetPlan.time1 > prevPlan.time1 &&
-        targetPlan.time2 > prevPlan.time2
-      ) {
+      if (targetPlan.time1 > prevPlan.time1 && targetPlan.time2 > prevPlan.time2) {
         targetPlan.marks = Number(win);
         prevPlan.marks = Number(lose);
-      } else if (
-        targetPlan.time1 < prevPlan.time1 &&
-        targetPlan.time2 < prevPlan.time2
-      ) {
+      } else if (targetPlan.time1 < prevPlan.time1 && targetPlan.time2 < prevPlan.time2) {
         targetPlan.marks = Number(lose);
         prevPlan.marks = Number(win);
       } else if (
-        (targetPlan.time1 < prevPlan.time1 &&
-          targetPlan.time2 > prevPlan.time2) ||
+        (targetPlan.time1 < prevPlan.time1 && targetPlan.time2 > prevPlan.time2) ||
         (targetPlan.time1 > prevPlan.time1 && targetPlan.time2 < prevPlan.time2)
       ) {
-        if (
-          targetPlan.time1 + targetPlan.time2 >
-          prevPlan.time1 + prevPlan.time2
-        ) {
+        if (targetPlan.time1 + targetPlan.time2 > prevPlan.time1 + prevPlan.time2) {
           targetPlan.marks = Number(drawWin);
           prevPlan.marks = Number(drawLose);
-        } else if (
-          targetPlan.time1 + targetPlan.time2 <
-          prevPlan.time1 + prevPlan.time2
-        ) {
+        } else if (targetPlan.time1 + targetPlan.time2 < prevPlan.time1 + prevPlan.time2) {
           targetPlan.marks = Number(drawLose);
           prevPlan.marks = Number(drawWin);
         } else {
@@ -408,17 +345,17 @@ const Process: React.FC = () => {
   const returnTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      behavior: 'smooth',
     });
   };
   // 下にスクロール
   const goBottom = () => {
-    var elm = document.documentElement;
+    const elm = document.documentElement;
     //scrollHeight ページの高さ clientHeight ブラウザの高さ
-    var bottom = elm.scrollHeight - elm.clientHeight;
+    const bottom = elm.scrollHeight - elm.clientHeight;
     //垂直方向へ移動
     window.scrollTo({
-      behavior: "smooth", // スムーズスクロールにする
+      behavior: 'smooth', // スムーズスクロールにする
       left: 0, // 左から離れた位置
       top: bottom, // 上から離れた位置
     });
@@ -426,46 +363,46 @@ const Process: React.FC = () => {
 
   // ソート機能を実装
   const sortGross = () => {
-    let newList: any;
-    newList = list.sort((el1, el2) => {
-      if (el1["gross"] < el2["gross"]) {
+    // let newList: any;
+    const newList = list.sort((el1, el2) => {
+      if (el1['gross'] < el2['gross']) {
         return 1;
       }
-      if (el1["gross"] > el2["gross"]) {
+      if (el1['gross'] > el2['gross']) {
         return -1;
       }
       return 0;
     });
-    setSort("gross");
+    setSort('gross');
     console.log(sort);
     setList(newList);
   };
   const sortPoint = () => {
-    let newList: any;
-    newList = list.sort((el1, el2) => {
-      if (el1["point"] < el2["point"]) {
+    // let newList: any;
+    const newList = list.sort((el1, el2) => {
+      if (el1['point'] < el2['point']) {
         return 1;
       }
-      if (el1["point"] > el2["point"]) {
+      if (el1['point'] > el2['point']) {
         return -1;
       }
       return 0;
     });
-    setSort("point");
+    setSort('point');
     setList(newList);
   };
   const sortScore = () => {
-    let newList: any;
-    newList = list.sort((el1, el2) => {
-      if (el1["score"] < el2["score"]) {
+    // let newList: any;
+    const newList = list.sort((el1, el2) => {
+      if (el1['score'] < el2['score']) {
         return 1;
       }
-      if (el1["score"] > el2["score"]) {
+      if (el1['score'] > el2['score']) {
         return -1;
       }
       return 0;
     });
-    setSort("score");
+    setSort('score');
     setList(newList);
   };
 
@@ -495,47 +432,44 @@ const Process: React.FC = () => {
 
   return (
     <>
-      <div className="Header">
+      <div className='Header'>
         {!title ? (
-          <div className="WebTitle">2setMatch</div>
+          <div className='WebTitle'>2setMatch</div>
         ) : (
-          <div className="WebTitle">{title}</div>
+          <div className='WebTitle'>{title}</div>
         )}
       </div>
-      <div className="Process">
-        <div className="ProcessContainer">
-          <div className="ProcessMain">
-            <div className="ProcessList">
+      <div className='Process'>
+        <div className='ProcessContainer'>
+          <div className='ProcessMain'>
+            <div className='ProcessList'>
               {list.length > 0 && (
                 <div>
-                  <h1 className="teamList">【チーム一覧】</h1>
-                  <p>Q：試合数　P：勝ち点　S：得失点差</p>
-                  <div className="ProcessList__Border">
-                    <div className="Head">
-                      <div className="name">TeamName</div>
-                      <button className="gross" onClick={sortGross}>
+                  <h1 className='teamList'>【チーム一覧】</h1>
+                  <p>Q:試合数 P:勝ち点 S:得失点差</p>
+                  <div className='ProcessList__Border'>
+                    <div className='Head'>
+                      <div className='name'>TeamName</div>
+                      <button className='gross' onClick={sortGross}>
                         Q
                       </button>
-                      <button className="point" onClick={sortPoint}>
+                      <button className='point' onClick={sortPoint}>
                         P
                       </button>
-                      <button className="score" onClick={sortScore}>
+                      <button className='score' onClick={sortScore}>
                         S
                       </button>
-                      <div className="space"></div>
+                      <div className='space'></div>
                     </div>
-                    <ul className="Item">
+                    <ul className='Item'>
                       {list.map((item: Pro, idx: number) => (
-                        <li className="ItemList" key={item.name}>
-                          <div className="ItemList__data">
-                            <div className="name">{item.name}</div>
-                            <div className="gross">{item.gross}</div>
-                            <div className="point">{item.point}</div>
-                            <div className="score">{item.score}</div>
-                            <button
-                              className="AddPlan"
-                              onClick={() => addPlan(idx)}
-                            >
+                        <li className='ItemList' key={item.name}>
+                          <div className='ItemList__data'>
+                            <div className='name'>{item.name}</div>
+                            <div className='gross'>{item.gross}</div>
+                            <div className='point'>{item.point}</div>
+                            <div className='score'>{item.score}</div>
+                            <button className='AddPlan' onClick={() => addPlan(idx)}>
                               試合
                             </button>
                           </div>
@@ -548,19 +482,15 @@ const Process: React.FC = () => {
               {!title && (
                 <div>
                   <h1>１．大会名を登録</h1>
-                  <div className="Form">
-                    <div className="FormContent">
+                  <div className='Form'>
+                    <div className='FormContent'>
                       <input
-                        className="FormContent__name"
-                        type="text"
-                        id="name"
+                        className='FormContent__name'
+                        type='text'
+                        id='name'
                         onChange={changeTitle}
                       ></input>
-                      <button
-                        className="FormContent__button"
-                        type="submit"
-                        onClick={onTitle}
-                      >
+                      <button className='FormContent__button' type='submit' onClick={onTitle}>
                         登 録
                       </button>
                     </div>
@@ -568,202 +498,158 @@ const Process: React.FC = () => {
                 </div>
               )}
               <h1>２．勝ち点を入力</h1>
-              <div className="Insert">
-                <div className="InsertContent">
-                  <div className="InsertContent__text">勝ち</div>
+              <div className='Insert'>
+                <div className='InsertContent'>
+                  <div className='InsertContent__text'>勝ち</div>
                   <input
-                    className="InsertContent__entry"
-                    type="number"
-                    id="win"
+                    className='InsertContent__entry'
+                    type='number'
+                    id='win'
                     onChange={changeWin}
                   ></input>
                 </div>
-                <div className="InsertContent">
-                  <div className="InsertContent__text">分勝</div>
+                <div className='InsertContent'>
+                  <div className='InsertContent__text'>分勝</div>
                   <input
-                    className="InsertContent__entry"
-                    type="number"
-                    id="draw_win"
+                    className='InsertContent__entry'
+                    type='number'
+                    id='draw_win'
                     onChange={changeDrawWin}
                   ></input>
                 </div>
-                <div className="InsertContent">
-                  <div className="InsertContent__text">分分</div>
+                <div className='InsertContent'>
+                  <div className='InsertContent__text'>分分</div>
                   <input
-                    className="InsertContent__entry"
-                    type="number"
-                    id="draw_draw"
+                    className='InsertContent__entry'
+                    type='number'
+                    id='draw_draw'
                     onChange={changeDrawDraw}
                   ></input>
                 </div>
-                <div className="InsertContent">
-                  <div className="InsertContent__text">分負</div>
+                <div className='InsertContent'>
+                  <div className='InsertContent__text'>分負</div>
                   <input
-                    className="InsertContent__entry"
-                    type="number"
-                    id="draw_lose"
+                    className='InsertContent__entry'
+                    type='number'
+                    id='draw_lose'
                     onChange={changeDrawLose}
                   ></input>
                 </div>
               </div>
               <h1>３．チームを登録</h1>
-              <div className="Form">
-                <div className="FormContent">
+              <div className='Form'>
+                <div className='FormContent'>
                   <input
-                    className="FormContent__name"
-                    type="text"
-                    id="name"
+                    className='FormContent__name'
+                    type='text'
+                    id='name'
                     value={data}
                     onChange={changeData}
                   ></input>
-                  <button
-                    className="FormContent__button"
-                    type="submit"
-                    onClick={addList}
-                  >
+                  <button className='FormContent__button' type='submit' onClick={addList}>
                     登 録
                   </button>
                 </div>
               </div>
-              {list.length > 0 && (
-                <div className="upButton" onClick={returnTop}></div>
-              )}
-              {list.length > 0 && (
-                <div className="downButton" onClick={goBottom}></div>
-              )}
+              {list.length > 0 && <div className='upButton' onClick={returnTop}></div>}
+              {list.length > 0 && <div className='downButton' onClick={goBottom}></div>}
             </div>
             {plan.length > 0 && (
-              <div className="Result">
-                <h1 className="title">【対戦表】</h1>
-                <div className="Result__Border">
+              <div className='Result'>
+                <h1 className='title'>【対戦表】</h1>
+                <div className='Result__Border'>
                   {plan.map((item, idx: number) => (
                     <>
-                      <div
-                        className={idx % 2 === 0 ? "Flex left" : "Flex right"}
-                        key={idx}
-                      >
-                        <div className="FlexNumber">
+                      <div className={idx % 2 === 0 ? 'Flex left' : 'Flex right'} key={idx}>
+                        <div className='FlexNumber'>
                           {idx % 2 === 0 && (
-                            <div className="FlexNumber__item">
-                              第{idx / 2 + 1}試合
-                            </div>
+                            <div className='FlexNumber__item'>第{idx / 2 + 1}試合</div>
                           )}
                         </div>
-                        <div className="FlexCross">
-                          {idx % 2 !== 0 && (
-                            <div className="FlexCross__item">-</div>
-                          )}
-                          {idx % 2 !== 0 && (
-                            <div className="FlexCross__item">-</div>
-                          )}
+                        <div className='FlexCross'>
+                          {idx % 2 !== 0 && <div className='FlexCross__item'>-</div>}
+                          {idx % 2 !== 0 && <div className='FlexCross__item'>-</div>}
                         </div>
-                        <div className="FlexCount">
+                        <div className='FlexCount'>
                           {idx % 2 === 0 && (
-                            <div className="FlexCount__Button">
-                              <button
-                                className="SubCount top"
-                                onClick={() => addTime1(idx, -1)}
-                              >
-                                <div className="CountText">-</div>
+                            <div className='FlexCount__Button'>
+                              <button className='SubCount top' onClick={() => addTime1(idx, -1)}>
+                                <div className='CountText'>-</div>
                               </button>
-                              <button
-                                className="AddCount top"
-                                onClick={() => addTime1(idx, 5)}
-                              >
-                                <div className="CountText">+</div>
+                              <button className='AddCount top' onClick={() => addTime1(idx, 5)}>
+                                <div className='CountText'>+</div>
                               </button>
                             </div>
                           )}
                           {idx % 2 !== 0 && (
-                            <div className="FlexCount__Point">
-                              <div className="ResultTime">{item.time1}</div>
+                            <div className='FlexCount__Point'>
+                              <div className='ResultTime'>{item.time1}</div>
                             </div>
                           )}
                           {idx % 2 === 0 && (
-                            <div className="FlexCount__Button">
-                              <button
-                                className="SubCount bottom"
-                                onClick={() => addTime2(idx, -1)}
-                              >
-                                <div className="CountText">-</div>
+                            <div className='FlexCount__Button'>
+                              <button className='SubCount bottom' onClick={() => addTime2(idx, -1)}>
+                                <div className='CountText'>-</div>
                               </button>
-                              <button
-                                className="AddCount bottom"
-                                onClick={() => addTime2(idx, 5)}
-                              >
-                                <div className="CountText">+</div>
+                              <button className='AddCount bottom' onClick={() => addTime2(idx, 5)}>
+                                <div className='CountText'>+</div>
                               </button>
                             </div>
                           )}
                           {idx % 2 !== 0 && (
-                            <div className="FlexCount__Point">
-                              <div className="ResultTime">{item.time2}</div>
+                            <div className='FlexCount__Point'>
+                              <div className='ResultTime'>{item.time2}</div>
                             </div>
                           )}
                         </div>
-                        <div className="FlexName">
-                          <div className="ResultName">
-                            <p className="ResultName__text">{item.name}</p>
+                        <div className='FlexName'>
+                          <div className='ResultName'>
+                            <p className='ResultName__text'>{item.name}</p>
                           </div>
-                          <button
-                            className="DeleteButton"
-                            onClick={() => handleRemoveTask(idx)}
-                          >
+                          <button className='DeleteButton' onClick={() => handleRemoveTask(idx)}>
                             取消
                           </button>
                         </div>
-                        <div className="FlexCount">
+                        <div className='FlexCount'>
                           {idx % 2 !== 0 && (
-                            <div className="FlexCount__Button">
-                              <button
-                                className="SubCount top"
-                                onClick={() => addTime1(idx, -1)}
-                              >
-                                <div className="CountText">-</div>
+                            <div className='FlexCount__Button'>
+                              <button className='SubCount top' onClick={() => addTime1(idx, -1)}>
+                                <div className='CountText'>-</div>
                               </button>
-                              <button
-                                className="AddCount top"
-                                onClick={() => addTime1(idx, 5)}
-                              >
-                                <div className="CountText">+</div>
+                              <button className='AddCount top' onClick={() => addTime1(idx, 5)}>
+                                <div className='CountText'>+</div>
                               </button>
                             </div>
                           )}
                           {idx % 2 === 0 && (
-                            <div className="FlexCount__Point">
-                              <div className="ResultTime">{item.time1}</div>
+                            <div className='FlexCount__Point'>
+                              <div className='ResultTime'>{item.time1}</div>
                             </div>
                           )}
                           {idx % 2 !== 0 && (
-                            <div className="FlexCount__Button">
-                              <button
-                                className="SubCount bottom"
-                                onClick={() => addTime2(idx, -1)}
-                              >
-                                <div className="CountText">-</div>
+                            <div className='FlexCount__Button'>
+                              <button className='SubCount bottom' onClick={() => addTime2(idx, -1)}>
+                                <div className='CountText'>-</div>
                               </button>
-                              <button
-                                className="AddCount bottom"
-                                onClick={() => addTime2(idx, 5)}
-                              >
-                                <div className="CountText">+</div>
+                              <button className='AddCount bottom' onClick={() => addTime2(idx, 5)}>
+                                <div className='CountText'>+</div>
                               </button>
                             </div>
                           )}
                           {idx % 2 === 0 && (
-                            <div className="FlexCount__Point">
-                              <div className="ResultTime">{item.time2}</div>
+                            <div className='FlexCount__Point'>
+                              <div className='ResultTime'>{item.time2}</div>
                             </div>
                           )}
                         </div>
                       </div>
                       {idx % 2 === 0 && (
-                        <div className="Cross">
-                          <div className="Cross__item">
-                            <div className="Cross__text">-</div>
+                        <div className='Cross'>
+                          <div className='Cross__item'>
+                            <div className='Cross__text'>-</div>
                           </div>
-                          <div className="Cross__item">
-                            <div className="Cross__text">-</div>
+                          <div className='Cross__item'>
+                            <div className='Cross__text'>-</div>
                           </div>
                         </div>
                       )}
