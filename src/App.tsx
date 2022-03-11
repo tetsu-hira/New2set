@@ -1,9 +1,11 @@
 import './App.css';
 import React, { useState } from 'react';
-import { HashRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
 
 import Header from './components/Header';
+import Index from './components/Index';
 import Process from './components/Process';
+import Product from './components/Product';
 
 type Doc = {
   id: number;
@@ -40,13 +42,15 @@ const App: React.FC = () => {
 
   // ドキュメントの名前を入力して登録する
   const docuName = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setDocu(event.target.value);
-    console.log(docu);
+    if (docu.length < 33) {
+      setDocu(event.target.value);
+      console.log(docu);
+    }
   };
   console.log(list);
 
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Header />
       <div className='App'>
         <div className='Top'>
@@ -70,10 +74,12 @@ const App: React.FC = () => {
                 <div className='TopHead__title'>＜ドキュメント一覧＞</div>
               </div>
               <ul className='TopList'>
-                {list.map((docu, i) => (
-                  <li key={i} className='TopList__item'>
+                {list.map((docu) => (
+                  <li key={docu.id} className='TopList__item'>
                     <div className='TopList__itemName'>
-                      <p>{docu.name}</p>
+                      <Link to={`./${docu.name}`} className='TopList__itemName'>
+                        <p>{docu.name}</p>
+                      </Link>
                     </div>
                   </li>
                 ))}
@@ -81,16 +87,16 @@ const App: React.FC = () => {
             </div>
             <div className='TopContainer__Right'>
               <Routes>
+                <Route path='/' element={<Index />} />
                 <Route path='/top' element={<Process />} />
-                {/* <Route path="/" element={<Index />} />
-                <Route path="/test" element={<Test />} /> */}
+                <Route path='/:name' element={<Product />} />
               </Routes>
             </div>
           </div>
         </div>
       </div>
       {/* <Footer /> */}
-    </HashRouter>
+    </BrowserRouter>
   );
 };
 

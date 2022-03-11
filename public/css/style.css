@@ -1023,6 +1023,87 @@ button {
   }
 }
 
+.Product {
+  min-height: 589px;
+}
+.ProductContainer {
+  margin: 1rem auto;
+  background-color: #fff;
+  box-shadow: 0 1px 3px gray;
+  width: 96%;
+  padding-bottom: 4rem;
+}
+.ProductContainer .ProductTitle {
+  font-size: 1.5rem;
+  margin: auto;
+  width: auto;
+  padding-top: 1rem;
+  color: #6c7686;
+  font-weight: bold;
+}
+.ProductContainer .ProductButton {
+  display: flex;
+  margin: auto 2em 1em;
+}
+.ProductContainer .ProductButton form {
+  display: flex;
+}
+.ProductContainer .ProductButton__name {
+  height: 40px;
+  border: 1px solid #73a1cd;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  margin-right: 16px;
+  width: 300px;
+  box-shadow: 2px 1px 5px 0 rgba(0, 0, 0, 0.2);
+  color: #6c7686;
+}
+@media screen and (max-width: 600px) {
+  .ProductContainer .ProductButton__name {
+    width: 160px;
+  }
+}
+.ProductContainer .ProductButton__button {
+  background: #73a1cd;
+  font-size: 16px;
+  width: 100px;
+  height: 40px;
+  line-height: 20px;
+  text-align: center;
+  color: #fff;
+  border: 1px solid #73a1cd;
+  margin: 8px 0;
+  box-shadow: 2px 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+@media screen and (max-width: 600px) {
+  .ProductContainer .ProductButton__button {
+    width: 67px;
+    font-size: 16px;
+    padding-left: 2px;
+    line-height: 17px;
+  }
+}
+.ProductContainer .ProductButton__button:hover {
+  background-color: #ffffff;
+  color: #73a1cd;
+  transition: all 0.5s ease;
+}
+.ProductContainer .ProductFlex {
+  display: flex;
+}
+.ProductContainer .ProductFlex .ProductHead {
+  font-size: 1rem;
+  color: #fff;
+  margin: 1rem;
+  text-align: center;
+  height: 36px;
+  width: 154px;
+  background-color: #73a1cd;
+  line-height: 35px;
+  box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.3);
+}
+
 .Top {
   min-height: 589px;
   height: 100%;
@@ -1032,10 +1113,10 @@ button {
   height: 100vh;
 }
 .TopContainer__Left {
-  padding-top: 56px;
+  padding-top: 58px;
   background-color: #ffffff;
   box-shadow: 0 0 4px 0 gray;
-  min-width: 17rem;
+  width: 17rem;
   overflow-y: auto;
   max-height: 100vh;
 }
@@ -1118,10 +1199,14 @@ button {
   position: relative;
   height: 100%;
   align-items: center;
+  text-align: left;
+  overflow-wrap: break-word;
+  padding-right: 24px;
 }
 .TopContainer__Left .TopList__itemName:hover {
   background-color: #ededed;
   color: #fff;
+  cursor: pointer;
 }
 .TopContainer__Left .TopList__itemName p {
   color: #6c7686;
