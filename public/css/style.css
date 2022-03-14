@@ -1026,6 +1026,15 @@ button {
 .Product {
   min-height: 589px;
 }
+.ProductTitle {
+  font-size: 1.5rem;
+  margin: auto;
+  width: auto;
+  text-align: left;
+  padding-top: 1rem;
+  color: #6c7686;
+  font-weight: bold;
+}
 .ProductContainer {
   margin: 1rem auto;
   background-color: #fff;
@@ -1033,31 +1042,19 @@ button {
   width: 96%;
   padding-bottom: 4rem;
 }
-.ProductContainer .ProductTitle {
-  font-size: 1.5rem;
-  margin: auto;
-  width: auto;
-  padding-top: 1rem;
-  color: #6c7686;
-  font-weight: bold;
-}
 .ProductContainer .ProductButton {
   display: flex;
   margin: auto 2em 1em;
-}
-.ProductContainer .ProductButton form {
-  display: flex;
+  padding-top: 2em;
 }
 .ProductContainer .ProductButton__name {
   height: 40px;
   border: 1px solid #73a1cd;
-  display: flex;
-  align-items: center;
-  margin: auto;
-  margin-right: 16px;
+  display: block;
   width: 300px;
   box-shadow: 2px 1px 5px 0 rgba(0, 0, 0, 0.2);
   color: #6c7686;
+  margin-right: 16px;
 }
 @media screen and (max-width: 600px) {
   .ProductContainer .ProductButton__name {
@@ -1073,7 +1070,6 @@ button {
   text-align: center;
   color: #fff;
   border: 1px solid #73a1cd;
-  margin: 8px 0;
   box-shadow: 2px 1px 5px 0 rgba(0, 0, 0, 0.2);
 }
 @media screen and (max-width: 600px) {

@@ -15,8 +15,6 @@ type Doc = {
 const App: React.FC = () => {
   const [docu, setDocu] = useState<string>('');
   const [id, setId] = useState<number>(0);
-  const [rev, setRev] = useState<string>();
-  const [title, setTitle] = useState<string>('新しいドキュメントを作成する');
   const [list, setList] = useState<Doc[]>([]);
 
   const nullDocu = () => {
