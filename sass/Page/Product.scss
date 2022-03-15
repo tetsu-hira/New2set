@@ -65,8 +65,10 @@
         margin: 1rem 0.4rem 0.4rem;
         text-align: center;
         height: 36px;
-        background-color: $PrimaryColor;
+        background-color: $WhiteColor;
+        color: $FontColor;
         line-height: 35px;
+        border: 1px solid $FontColor;
         box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.15);
         &.id {
           width: 60px;
