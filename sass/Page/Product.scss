@@ -1,5 +1,6 @@
 .Product {
   min-height: 589px;
+  width: 1040px;
   &Title {
     font-size: 1.5rem;
     margin: auto;
@@ -24,9 +25,10 @@
         border: 1px solid $PrimaryColor;
         display: block;
         width: 300px;
-        box-shadow: 2px 1px 5px 0 rgba(0, 0, 0, 20%);
         color: $FontColor;
         margin-right: 16px;
+        padding-left: 8px;
+        line-height: 20px;
         @include mq() {
           width: 160px;
         }
@@ -40,13 +42,11 @@
         text-align: center;
         color: #fff;
         border: 1px solid $PrimaryColor;
-        box-shadow: 2px 1px 5px 0 rgba(0, 0, 0, 20%);
-        // border-radius: 3px;
         @include mq() {
           width: 67px;
           font-size: 16px;
           padding-left: 2px;
-          line-height: 17px;
+          line-height: 20px;
         }
         &:hover {
           background-color: #ffffff;
@@ -55,20 +55,78 @@
         }
       }
     }
-    .ProductFlex {
+    .Item {
       display: flex;
-      .ProductHead {
+      background-color: #ffffff;
+      margin: auto 2rem;
+      .ItemHead {
         font-size: 1rem;
-        // font-weight: 600;
         color: $WhiteColor;
-        margin: 1rem;
+        margin: 1rem 0.4rem 0.4rem;
         text-align: center;
         height: 36px;
-        width: 154px;
         background-color: $PrimaryColor;
         line-height: 35px;
-        // text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
-        box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.3);
+        box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.15);
+        &.id {
+          width: 60px;
+        }
+        &.users {
+          min-width: 300px;
+        }
+        &.point {
+          width: 100px;
+        }
+        &.score {
+          width: 100px;
+        }
+        &.times {
+          width: 100px;
+        }
+        &.ratio {
+          width: 100px;
+        }
+        &.count {
+          width: 100px;
+        }
+      }
+    }
+    .List {
+      .ListTop {
+        display: flex;
+        background-color: #ffffff;
+        margin: auto 2rem 1px;
+        .ListBody {
+          font-size: 1rem;
+          color: $WhiteColor;
+          margin: auto 0.4rem;
+          text-align: center;
+          height: 36px;
+          background-color: $FontColor;
+          line-height: 35px;
+          box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.15);
+          &.id {
+            width: 60px;
+          }
+          &.users {
+            min-width: 300px;
+          }
+          &.point {
+            width: 100px;
+          }
+          &.score {
+            width: 100px;
+          }
+          &.times {
+            width: 100px;
+          }
+          &.ratio {
+            width: 100px;
+          }
+          &.count {
+            width: 100px;
+          }
+        }
       }
     }
   }

@@ -3,11 +3,11 @@ import { useParams, useLocation } from 'react-router';
 
 type Pro = {
   id: number;
-  name: string;
+  users: string;
   point: number;
   score: number;
-  volume: number;
-  set: number;
+  times: number;
+  ratio: number;
   count: number;
 };
 
@@ -16,7 +16,7 @@ const Product: React.FC = () => {
   const location = useLocation();
 
   const [teamList, setTeamList] = useState<Pro[]>([]);
-  const [id, setId] = useState<number>(0);
+  const [id, setId] = useState<number>(1);
   const [team, setTeam] = useState<string>('');
 
   const nullTeam = () => {
@@ -31,7 +31,7 @@ const Product: React.FC = () => {
     if (team) {
       setTeamList([
         ...teamList,
-        { id: id, name: team, point: 0, score: 0, volume: 0, set: 0, count: 0 },
+        { id: id, users: team, point: 0, score: 0, times: 0, ratio: 0, count: 0 },
       ]);
       setTeam('');
       setId(id + 1);
@@ -63,31 +63,29 @@ const Product: React.FC = () => {
               onClick={nullTeam}
             ></input>
             <button className='ProductButton__button' type='submit' onClick={handlePutTeam}>
-              登録
+              登 録
             </button>
           </div>
-          <div className='ProductFlex'>
-            <div className='ProductHead'>No.</div>
-            <div className='ProductHead'>Name</div>
-            <div className='ProductHead'>Point</div>
-            <div className='ProductHead'>Score</div>
-            <div className='ProductHead'>Volume</div>
-            <div className='ProductHead'>Set</div>
-            <div className='ProductHead'>Count</div>
+          <div className='Item'>
+            <div className='ItemHead id'>No.</div>
+            <div className='ItemHead users'>Users</div>
+            <div className='ItemHead point'>Point</div>
+            <div className='ItemHead score'>Score</div>
+            <div className='ItemHead times'>Times</div>
+            <div className='ItemHead ratio'>Ratio</div>
+            <div className='ItemHead count'>Count</div>
           </div>
           {teamList.length > 0 && (
-            <ul>
+            <ul className='List'>
               {teamList.map((team) => (
-                <li key={team.id}>
-                  <div>
-                    <div>{team.id}</div>
-                    <div>{team.name}</div>
-                    <div>{team.point}</div>
-                    <div>{team.score}</div>
-                    <div>{team.volume}</div>
-                    <div>{team.set}</div>
-                    <div>{team.count}</div>
-                  </div>
+                <li key={team.id} className='ListTop'>
+                  <div className='ListBody id'>{team.id}</div>
+                  <div className='ListBody users'>{team.users}</div>
+                  <div className='ListBody point'>{team.point}</div>
+                  <div className='ListBody score'>{team.score}</div>
+                  <div className='ListBody times'>{team.times}</div>
+                  <div className='ListBody ratio'>{team.ratio}</div>
+                  <div className='ListBody count'>{team.count}</div>
                 </li>
               ))}
             </ul>

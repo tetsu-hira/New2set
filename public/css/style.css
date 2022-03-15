@@ -1025,6 +1025,7 @@ button {
 
 .Product {
   min-height: 589px;
+  width: 1040px;
 }
 .ProductTitle {
   font-size: 1.5rem;
@@ -1052,9 +1053,10 @@ button {
   border: 1px solid #73a1cd;
   display: block;
   width: 300px;
-  box-shadow: 2px 1px 5px 0 rgba(0, 0, 0, 0.2);
   color: #6c7686;
   margin-right: 16px;
+  padding-left: 8px;
+  line-height: 20px;
 }
 @media screen and (max-width: 600px) {
   .ProductContainer .ProductButton__name {
@@ -1070,14 +1072,13 @@ button {
   text-align: center;
   color: #fff;
   border: 1px solid #73a1cd;
-  box-shadow: 2px 1px 5px 0 rgba(0, 0, 0, 0.2);
 }
 @media screen and (max-width: 600px) {
   .ProductContainer .ProductButton__button {
     width: 67px;
     font-size: 16px;
     padding-left: 2px;
-    line-height: 17px;
+    line-height: 20px;
   }
 }
 .ProductContainer .ProductButton__button:hover {
@@ -1085,19 +1086,77 @@ button {
   color: #73a1cd;
   transition: all 0.5s ease;
 }
-.ProductContainer .ProductFlex {
+.ProductContainer .Item {
   display: flex;
+  background-color: #ffffff;
+  margin: auto 2rem;
 }
-.ProductContainer .ProductFlex .ProductHead {
+.ProductContainer .Item .ItemHead {
   font-size: 1rem;
   color: #fff;
-  margin: 1rem;
+  margin: 1rem 0.4rem 0.4rem;
   text-align: center;
   height: 36px;
-  width: 154px;
   background-color: #73a1cd;
   line-height: 35px;
-  box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.15);
+}
+.ProductContainer .Item .ItemHead.id {
+  width: 60px;
+}
+.ProductContainer .Item .ItemHead.users {
+  min-width: 300px;
+}
+.ProductContainer .Item .ItemHead.point {
+  width: 100px;
+}
+.ProductContainer .Item .ItemHead.score {
+  width: 100px;
+}
+.ProductContainer .Item .ItemHead.times {
+  width: 100px;
+}
+.ProductContainer .Item .ItemHead.ratio {
+  width: 100px;
+}
+.ProductContainer .Item .ItemHead.count {
+  width: 100px;
+}
+.ProductContainer .List .ListTop {
+  display: flex;
+  background-color: #ffffff;
+  margin: auto 2rem 1px;
+}
+.ProductContainer .List .ListTop .ListBody {
+  font-size: 1rem;
+  color: #fff;
+  margin: auto 0.4rem;
+  text-align: center;
+  height: 36px;
+  background-color: #6c7686;
+  line-height: 35px;
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.15);
+}
+.ProductContainer .List .ListTop .ListBody.id {
+  width: 60px;
+}
+.ProductContainer .List .ListTop .ListBody.users {
+  min-width: 300px;
+}
+.ProductContainer .List .ListTop .ListBody.point {
+  width: 100px;
+}
+.ProductContainer .List .ListTop .ListBody.score {
+  width: 100px;
+}
+.ProductContainer .List .ListTop .ListBody.times {
+  width: 100px;
+}
+.ProductContainer .List .ListTop .ListBody.ratio {
+  width: 100px;
+}
+.ProductContainer .List .ListTop .ListBody.count {
+  width: 100px;
 }
 
 .Top {
