@@ -75,7 +75,7 @@ const App: React.FC = () => {
                 {list.map((docu) => (
                   <li key={docu.id} className='TopList__item'>
                     <div className='TopList__itemName'>
-                      <Link to={`./${docu.name}`} className='TopList__itemName'>
+                      <Link to={`./${docu.id}/${docu.name}`} className='TopList__itemName'>
                         <p>{docu.name}</p>
                       </Link>
                     </div>
@@ -87,7 +87,7 @@ const App: React.FC = () => {
               <Routes>
                 <Route path='/' element={<Index />} />
                 <Route path='/top' element={<Process />} />
-                <Route path='/:name' element={<Product />} />
+                <Route path='/:id/:name' element={<Product />} />
               </Routes>
             </div>
           </div>

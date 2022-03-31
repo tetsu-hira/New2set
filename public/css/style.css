@@ -17,7 +17,8 @@ body {
   height: 100vh;
 }
 
-ul, li {
+ul,
+li {
   list-style-type: none;
   padding: 0;
   margin: 0;
@@ -33,7 +34,13 @@ a:hover {
   transition: all 0.3s ease;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   margin: 0;
 }
 
@@ -1040,7 +1047,7 @@ button {
   margin: 1rem auto;
   background-color: #fff;
   box-shadow: 0 1px 3px gray;
-  width: 96%;
+  width: 90%;
   padding-bottom: 4rem;
 }
 .ProductContainer .ProductButton {
@@ -1097,7 +1104,7 @@ button {
   margin: 1rem 0.4rem 0.4rem;
   text-align: center;
   height: 36px;
-  background-color: #73a1cd;
+  background-color: #4d80b0;
   line-height: 35px;
   box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.15);
 }
@@ -1133,7 +1140,7 @@ button {
   margin: auto 0.4rem;
   text-align: center;
   height: 36px;
-  background-color: #6c7686;
+  background-color: #4d80b0;
   line-height: 35px;
   box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.15);
 }

@@ -4,7 +4,8 @@
 
 html {
   font-size: 100%;
-  font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Arial',
+    'Yu Gothic', 'Meiryo', sans-serif;
   line-height: 1.7;
   letter-spacing: 1px;
 }
@@ -16,7 +17,8 @@ body {
   height: 100vh;
 }
 
-ul, li {
+ul,
+li {
   list-style-type: none;
   padding: 0;
   margin: 0;
@@ -32,8 +34,13 @@ a {
   }
 }
 
-
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   margin: 0;
 }
 
@@ -50,7 +57,7 @@ input {
 .Main {
   display: block;
 }
-button{
+button {
   background-color: transparent;
   border: none;
   cursor: pointer;

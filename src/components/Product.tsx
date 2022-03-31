@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { useParams, useLocation } from 'react-router';
 
 type Pro = {
-  id: number;
-  users: string;
+  idnum: number;
+  users: string | undefined;
   point: number;
   score: number;
   times: number;
@@ -13,10 +13,11 @@ type Pro = {
 
 const Product: React.FC = () => {
   const { name } = useParams<{ name: string }>();
+  const { id } = useParams<{ id: string | undefined }>();
   const location = useLocation();
 
   const [teamList, setTeamList] = useState<Pro[]>([]);
-  const [id, setId] = useState<number>(1);
+  const [idNum, setIdNum] = useState<number>(1);
   const [team, setTeam] = useState<string>('');
 
   const nullTeam = () => {
@@ -31,10 +32,10 @@ const Product: React.FC = () => {
     if (team) {
       setTeamList([
         ...teamList,
-        { id: id, users: team, point: 0, score: 0, times: 0, ratio: 0, count: 0 },
+        { idnum: idNum, users: team, point: 0, score: 0, times: 0, ratio: 0, count: 0 },
       ]);
       setTeam('');
-      setId(id + 1);
+      setIdNum(idNum + 1);
     }
   };
 
@@ -46,6 +47,7 @@ const Product: React.FC = () => {
     }
   };
   console.log(teamList);
+  console.log(id);
 
   return (
     <>
@@ -78,8 +80,8 @@ const Product: React.FC = () => {
           {teamList.length > 0 && (
             <ul className='List'>
               {teamList.map((team) => (
-                <li key={team.id} className='ListTop'>
-                  <div className='ListBody id'>{team.id}</div>
+                <li key={team.idnum} className='ListTop'>
+                  <div className='ListBody id'>{team.idnum}</div>
                   <div className='ListBody users'>{team.users}</div>
                   <div className='ListBody point'>{team.point}</div>
                   <div className='ListBody score'>{team.score}</div>
