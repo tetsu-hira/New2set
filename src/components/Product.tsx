@@ -48,6 +48,7 @@ const Product: React.FC = () => {
   };
   console.log(teamList);
   console.log(id);
+  console.log(location);
 
   return (
     <>

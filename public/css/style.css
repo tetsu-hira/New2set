@@ -84,7 +84,7 @@ button {
 
 .Header {
   height: 48px;
-  background-color: #73a1cd;
+  background-color: #4d80b0;
   width: 100%;
   display: flex;
   z-index: 100;
@@ -142,7 +142,7 @@ button {
   font-weight: bold;
 }
 .Header .HeaderContainer .HeaderLink__text:hover {
-  color: #73a1cd;
+  color: #4d80b0;
 }
 .Header .HeaderContainer .HeaderRight {
   display: flex;
@@ -222,7 +222,7 @@ button {
 }
 .FormContent__name {
   height: 40px;
-  border: 1px solid #73a1cd;
+  border: 1px solid #4d80b0;
   display: flex;
   align-items: center;
   margin: auto 16px;
@@ -236,14 +236,14 @@ button {
   }
 }
 .FormContent__button {
-  background: #73a1cd;
+  background: #4d80b0;
   font-size: 16px;
   width: 100px;
   height: 40px;
   line-height: 20px;
   text-align: center;
   color: #fff;
-  border: 1px solid #73a1cd;
+  border: 1px solid #4d80b0;
   margin: 8px 0;
   box-shadow: 2px 1px 5px 0 rgba(0, 0, 0, 0.2);
   border-radius: 3px;
@@ -258,7 +258,7 @@ button {
 }
 .FormContent__button:hover {
   background-color: #ffffff;
-  color: #73a1cd;
+  color: #4d80b0;
   transition: all 0.3s ease;
 }
 
@@ -302,11 +302,11 @@ button {
   width: 36px;
   height: 32px;
   line-height: 30px;
-  background-color: #73a1cd;
-  border-top: 1px solid #73a1cd;
-  border-left: 1px solid #73a1cd;
+  background-color: #4d80b0;
+  border-top: 1px solid #4d80b0;
+  border-left: 1px solid #4d80b0;
   border-bottom: 2px solid #4e709180;
-  border-right: 1px solid #73a1cd;
+  border-right: 1px solid #4d80b0;
   border-radius: 4px;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
@@ -327,11 +327,11 @@ button {
   width: 36px;
   height: 32px;
   line-height: 30px;
-  background-color: #73a1cd;
-  border-top: 1px solid #73a1cd;
-  border-left: 1px solid #73a1cd;
+  background-color: #4d80b0;
+  border-top: 1px solid #4d80b0;
+  border-left: 1px solid #4d80b0;
   border-bottom: 2px solid #4e709180;
-  border-right: 1px solid #73a1cd;
+  border-right: 1px solid #4d80b0;
   border-radius: 4px;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
@@ -352,11 +352,11 @@ button {
   width: 36px;
   height: 32px;
   line-height: 30px;
-  background-color: #73a1cd;
-  border-top: 1px solid #73a1cd;
-  border-left: 1px solid #73a1cd;
+  background-color: #4d80b0;
+  border-top: 1px solid #4d80b0;
+  border-left: 1px solid #4d80b0;
   border-bottom: 2px solid #4e709180;
-  border-right: 1px solid #73a1cd;
+  border-right: 1px solid #4d80b0;
   border-radius: 4px;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
@@ -396,7 +396,7 @@ button {
   color: #6c7686;
   width: 48px;
   height: 40px;
-  border: 1px solid #73a1cd;
+  border: 1px solid #4d80b0;
   align-items: center;
   text-align: center;
   margin: auto 7px;
@@ -491,17 +491,17 @@ button {
   }
 }
 .ItemList__data .AddPlan {
-  background: #73a1cd;
+  background: #4d80b0;
   font-size: 12px;
   width: 36px;
   height: 32px;
   line-height: 30px;
   text-align: center;
   color: #fff;
-  border-top: 1px solid #73a1cd;
-  border-left: 1px solid #73a1cd;
+  border-top: 1px solid #4d80b0;
+  border-left: 1px solid #4d80b0;
   border-bottom: 2px solid #4e709180;
-  border-right: 1px solid #73a1cd;
+  border-right: 1px solid #4d80b0;
   border-radius: 4px;
   margin: auto;
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
@@ -585,7 +585,7 @@ button {
   appearance: none;
   padding: 0 9px;
   margin: 4px;
-  border: 1px solid #73a1cd;
+  border: 1px solid #4d80b0;
   text-align-last: right;
   outline: none;
   color: #6c7686;
@@ -773,7 +773,7 @@ button {
   }
 }
 .ProcessContainer .ProcessMain .Result__Border .FlexCount__Button .SubCount {
-  background: #e2f1f1;
+  background: #efefef;
   font-size: 1rem;
   width: 32px;
   height: 32px;
@@ -816,13 +816,13 @@ button {
   -webkit-transform: translateY(1px);
   transform: translateY(1px);
   box-shadow: none;
-  border-bottom: 2px solid #e2f1f1;
+  border-bottom: 2px solid #efefef;
 }
 .ProcessContainer .ProcessMain .Result__Border .FlexCount__Button .SubCount .CountText {
   color: #6c7686;
 }
 .ProcessContainer .ProcessMain .Result__Border .FlexCount__Button .AddCount {
-  background: #e2f1f1;
+  background: #efefef;
   font-size: 1rem;
   width: 32px;
   height: 32px;
@@ -865,7 +865,7 @@ button {
   -webkit-transform: translateY(1px);
   transform: translateY(1px);
   box-shadow: none;
-  border-bottom: 2px solid #e2f1f1;
+  border-bottom: 2px solid #efefef;
 }
 .ProcessContainer .ProcessMain .Result__Border .FlexCount__Point {
   display: flex;
@@ -908,7 +908,7 @@ button {
   }
 }
 .ProcessContainer .ProcessMain .Result__Border .FlexName .ResultIndex {
-  border: 1px solid #73a1cd;
+  border: 1px solid #4d80b0;
   width: 60px;
   margin: 5px auto;
   height: 30px;
@@ -916,7 +916,7 @@ button {
 }
 .ProcessContainer .ProcessMain .Result__Border .FlexName .ResultName {
   font-size: 1rem;
-  border: 1px solid #73a1cd;
+  border: 1px solid #4d80b0;
   width: 178px;
   height: 50px;
   line-height: 1;
@@ -942,7 +942,7 @@ button {
   transform: translate(-50%, -50%);
 }
 .ProcessContainer .ProcessMain .Result__Border .FlexName .DeleteButton {
-  background: #73a1cd;
+  background: #4d80b0;
   font-size: 0.8rem;
   min-width: 64px;
   height: 22px;
@@ -953,10 +953,10 @@ button {
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  border-top: 1px solid #73a1cd;
-  border-left: 1px solid #73a1cd;
+  border-top: 1px solid #4d80b0;
+  border-left: 1px solid #4d80b0;
   border-bottom: 2px solid #7694b180;
-  border-right: 1px solid #73a1cd;
+  border-right: 1px solid #4d80b0;
 }
 .ProcessContainer .ProcessMain .Result__Border .FlexName .DeleteButton:hover {
   cursor: pointer;
@@ -1040,6 +1040,7 @@ button {
   width: auto;
   text-align: left;
   padding-top: 1rem;
+  padding-left: 1rem;
   color: #6c7686;
   font-weight: bold;
 }
@@ -1048,7 +1049,7 @@ button {
   background-color: #fff;
   box-shadow: 0 1px 3px gray;
   width: 90%;
-  padding-bottom: 4rem;
+  padding-bottom: 2rem;
 }
 .ProductContainer .ProductButton {
   display: flex;
@@ -1057,7 +1058,7 @@ button {
 }
 .ProductContainer .ProductButton__name {
   height: 40px;
-  border: 1px solid #73a1cd;
+  border: 1px solid #4d80b0;
   display: block;
   width: 300px;
   color: #6c7686;
@@ -1071,14 +1072,14 @@ button {
   }
 }
 .ProductContainer .ProductButton__button {
-  background: #73a1cd;
+  background: #4d80b0;
   font-size: 16px;
   width: 100px;
   height: 40px;
   line-height: 20px;
   text-align: center;
   color: #fff;
-  border: 1px solid #73a1cd;
+  border: 1px solid #4d80b0;
 }
 @media screen and (max-width: 600px) {
   .ProductContainer .ProductButton__button {
@@ -1090,23 +1091,22 @@ button {
 }
 .ProductContainer .ProductButton__button:hover {
   background-color: #ffffff;
-  color: #73a1cd;
+  color: #4d80b0;
   transition: all 0.5s ease;
 }
 .ProductContainer .Item {
   display: flex;
   background-color: #ffffff;
-  margin: auto 2rem;
+  margin: auto 2rem 0.25rem;
 }
 .ProductContainer .Item .ItemHead {
   font-size: 1rem;
-  color: #fff;
+  color: #6c7686;
   margin: 1rem 0.4rem 0.4rem;
   text-align: center;
   height: 36px;
-  background-color: #4d80b0;
+  background-color: #efefef;
   line-height: 35px;
-  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.15);
 }
 .ProductContainer .Item .ItemHead.id {
   width: 60px;
@@ -1132,23 +1132,27 @@ button {
 .ProductContainer .List .ListTop {
   display: flex;
   background-color: #ffffff;
-  margin: auto 2rem 1px;
+  margin: auto 2rem 3px;
+  border-top: 1px solid #6c7686;
+}
+.ProductContainer .List .ListTop:last-child {
+  border-bottom: 1px solid #6c7686;
 }
 .ProductContainer .List .ListTop .ListBody {
   font-size: 1rem;
-  color: #fff;
+  color: #6c7686;
   margin: auto 0.4rem;
   text-align: center;
   height: 36px;
-  background-color: #4d80b0;
   line-height: 35px;
-  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.15);
 }
 .ProductContainer .List .ListTop .ListBody.id {
   width: 60px;
 }
 .ProductContainer .List .ListTop .ListBody.users {
   min-width: 300px;
+  text-align-last: left;
+  padding-left: 2rem;
 }
 .ProductContainer .List .ListTop .ListBody.point {
   width: 100px;
@@ -1176,7 +1180,7 @@ button {
 }
 .TopContainer__Left {
   padding-top: 58px;
-  background-color: #ffffff;
+  background-color: #fff;
   box-shadow: 0 0 4px 0 gray;
   width: 17rem;
   overflow-y: auto;
@@ -1207,7 +1211,7 @@ button {
 }
 .TopContainer__Left .TopHead .TopButton__name {
   height: 40px;
-  border: 1px solid #73a1cd;
+  border: 1px solid #4d80b0;
   display: flex;
   align-items: center;
   margin: auto;
@@ -1222,14 +1226,14 @@ button {
   }
 }
 .TopContainer__Left .TopHead .TopButton__button {
-  background: #73a1cd;
+  background: #4d80b0;
   font-size: 14px;
   width: 15rem;
   height: 30px;
   line-height: 10px;
   text-align: center;
   color: #fff;
-  border: 1px solid #73a1cd;
+  border: 1px solid #4d80b0;
   margin: 10px auto;
   display: block;
 }
@@ -1243,7 +1247,7 @@ button {
 }
 .TopContainer__Left .TopHead .TopButton__button:hover {
   background-color: #ffffff;
-  color: #73a1cd;
+  color: #4d80b0;
   transition: all 0.5s ease;
 }
 .TopContainer__Left .TopList__item {

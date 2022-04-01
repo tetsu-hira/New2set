@@ -7,6 +7,7 @@
     width: auto;
     text-align: left;
     padding-top: 1rem;
+    padding-left: 1rem;
     color: $FontColor;
     font-weight: bold;
   }
@@ -15,7 +16,7 @@
     background-color: $WhiteColor;
     box-shadow: 0 1px 3px gray;
     width: 90%;
-    padding-bottom: 4rem;
+    padding-bottom: 2rem;
     .ProductButton {
       display: flex;
       margin: auto 2em 1em;
@@ -58,16 +59,17 @@
     .Item {
       display: flex;
       background-color: #ffffff;
-      margin: auto 2rem;
+      margin: auto 2rem 0.25rem;
       .ItemHead {
         font-size: 1rem;
-        color: $WhiteColor;
+        color: $FontColor;
         margin: 1rem 0.4rem 0.4rem;
         text-align: center;
         height: 36px;
-        background-color: $Main4;
+        background-color: $SubColor;
         line-height: 35px;
-        box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.15);
+        // box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.15);
+        // border: 1px solid $FontColor;
         &.id {
           width: 60px;
         }
@@ -95,21 +97,27 @@
       .ListTop {
         display: flex;
         background-color: #ffffff;
-        margin: auto 2rem 1px;
+        margin: auto 2rem 3px;
+        border-top: 1px solid $FontColor;
+        &:last-child {
+          border-bottom: 1px solid $FontColor;
+        }
         .ListBody {
           font-size: 1rem;
-          color: $WhiteColor;
+          color: $FontColor;
           margin: auto 0.4rem;
           text-align: center;
           height: 36px;
-          background-color: $Main4;
+          // background-color: $Main4;
           line-height: 35px;
-          box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.15);
+          // box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.15);
           &.id {
             width: 60px;
           }
           &.users {
             min-width: 300px;
+            text-align-last: left;
+            padding-left: 2rem;
           }
           &.point {
             width: 100px;

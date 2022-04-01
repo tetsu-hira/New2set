@@ -33,10 +33,14 @@ const App: React.FC = () => {
           name: docu,
         },
       ]);
+      sessionStorage.setItem(docu, docu);
       setDocu('');
       setId(id + 1);
     }
   };
+
+  const item = sessionStorage.getItem('あああ');
+  console.log(sessionStorage);
 
   // ドキュメントの名前を入力して登録する
   const docuName = (event: React.ChangeEvent<HTMLInputElement>) => {
