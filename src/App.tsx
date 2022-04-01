@@ -6,6 +6,7 @@ import Header from './components/Header';
 import Index from './components/Index';
 import Process from './components/Process';
 import Product from './components/Product';
+import Test from './components/Test';
 
 type Doc = {
   id: number;
@@ -16,6 +17,7 @@ const App: React.FC = () => {
   const [docu, setDocu] = useState<string>('');
   const [id, setId] = useState<number>(0);
   const [list, setList] = useState<Doc[]>([]);
+  const [note, setNote] = useState<string | null>('');
 
   const nullDocu = () => {
     setDocu(' ');
@@ -33,13 +35,14 @@ const App: React.FC = () => {
           name: docu,
         },
       ]);
-      sessionStorage.setItem(docu, docu);
+      sessionStorage.setItem(String(id), docu);
+      setNote(sessionStorage.getItem('0'));
       setDocu('');
       setId(id + 1);
     }
   };
 
-  const item = sessionStorage.getItem('あああ');
+  console.log(note);
   console.log(sessionStorage);
 
   // ドキュメントの名前を入力して登録する
@@ -49,7 +52,7 @@ const App: React.FC = () => {
       console.log(docu);
     }
   };
-  console.log(list);
+  // console.log(list);
 
   return (
     <BrowserRouter>
@@ -91,6 +94,7 @@ const App: React.FC = () => {
               <Routes>
                 <Route path='/' element={<Index />} />
                 <Route path='/top' element={<Process />} />
+                <Route path='/test' element={<Test />} />
                 <Route path='/:id/:name' element={<Product />} />
               </Routes>
             </div>
