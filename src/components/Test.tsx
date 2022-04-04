@@ -1,28 +1,67 @@
 import * as React from 'react';
-import { useReducer } from 'react';
+import { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
-const initialState = {
-  count: 0,
-};
+import allActions from '../actions';
 
-const reducer = (state: any, action: any) => {
-  if (action === 'INCREMENT') {
-    return { count: state.count + 1 };
-  } else {
-    return { count: state.count - 1 };
-  }
+type RootState = {
+  counter: number;
+  currentUser: string[];
+  entryItem: string;
 };
 
 const Test: React.FC = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [item, setitem] = useState<string>('');
+  const counter = useSelector((state: RootState) => state.counter);
+  const currentUser = useSelector((state: any) => state.currentUser);
+  const entryItem = useSelector((state: RootState) => state.entryItem);
+
+  const dispatch = useDispatch();
+
+  const user = { name: 'Rei' };
+
+  const itemName = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (item.length < 33) {
+      setitem(event.target.value);
+      console.log(item);
+    }
+  };
+
+  useEffect(() => {
+    dispatch(allActions.userActions.setUser(user.name));
+  }, []);
+
+  console.log(entryItem);
 
   return (
     <>
-      <div>てすと</div>
-      <h1>Counter</h1>
-      <h2>カウント: {state.count}</h2>
-      <button onClick={() => dispatch('INCREMENT')}>+</button>
-      <button onClick={() => dispatch('DECREMENT')}>-</button>
+      <div>
+        {currentUser.loggedIn ? (
+          <>
+            <h1>Hello, {currentUser.user}</h1>
+            <button onClick={() => dispatch(allActions.userActions.logOut())}>Logout</button>
+          </>
+        ) : (
+          <>
+            <h1>Login</h1>
+            <button onClick={() => dispatch(allActions.userActions.setUser(user.name))}>
+              Login as Rei
+            </button>
+          </>
+        )}
+        <h1>Counter: {counter}</h1>
+        <button onClick={() => dispatch(allActions.counterActions.increment())}>
+          Increase Counter
+        </button>
+        <button onClick={() => dispatch(allActions.counterActions.decrement())}>
+          Decrease Counter
+        </button>
+      </div>
+      <div>
+        <h1>Entry Test!!!</h1>
+        <input onChange={itemName}></input>
+        <button onClick={() => dispatch(allActions.entryAction.addItem(item))}>Entry</button>
+      </div>
     </>
   );
 };

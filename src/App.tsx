@@ -36,7 +36,6 @@ const App: React.FC = () => {
         },
       ]);
       sessionStorage.setItem(String(id), docu);
-      setNote(sessionStorage.getItem('0'));
       setDocu('');
       setId(id + 1);
     }

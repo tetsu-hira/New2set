@@ -11,5 +11,6 @@
     // import の順番をルール化
     // 参考：https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/order.md
     "unused-imports/no-unused-imports": "warn" // "error" でも
+    // "@typescript-eslint/no-explicit-any": 0
   }
 }
