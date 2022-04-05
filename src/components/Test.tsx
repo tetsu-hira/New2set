@@ -11,10 +11,10 @@ type RootState = {
 };
 
 const Test: React.FC = () => {
-  const [item, setitem] = useState<string>('');
+  const [item, setItem] = useState<string>('');
   const counter = useSelector((state: RootState) => state.counter);
   const currentUser = useSelector((state: any) => state.currentUser);
-  const entryItem = useSelector((state: RootState) => state.entryItem);
+  const entryItem = useSelector((state: any) => state.entryItem);
 
   const dispatch = useDispatch();
 
@@ -22,9 +22,16 @@ const Test: React.FC = () => {
 
   const itemName = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (item.length < 33) {
-      setitem(event.target.value);
+      setItem(event.target.value);
       console.log(item);
     }
+  };
+  const defaultItem = () => {
+    setItem(item.slice(1));
+  };
+  const nullItem = () => {
+    setItem(' ');
+    console.log(item);
   };
 
   useEffect(() => {
@@ -32,6 +39,7 @@ const Test: React.FC = () => {
   }, []);
 
   console.log(entryItem);
+  console.log(item);
 
   return (
     <>
@@ -59,9 +67,18 @@ const Test: React.FC = () => {
       </div>
       <div>
         <h1>Entry Test!!!</h1>
-        <input onChange={itemName}></input>
+        <input
+          type='text'
+          onChange={itemName}
+          value={!item ? 'メモのタイトルを入力' : item}
+          onBlur={defaultItem}
+          onClick={nullItem}
+        ></input>
         <button onClick={() => dispatch(allActions.entryAction.addItem(item))}>Entry</button>
       </div>
+      {entryItem.teamList.map((team: any) => (
+        <div key={team}>{team}</div>
+      ))}
     </>
   );
 };
