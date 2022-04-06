@@ -71,13 +71,13 @@ const Test: React.FC = () => {
           type='text'
           onChange={itemName}
           value={!item ? 'メモのタイトルを入力' : item}
-          onBlur={defaultItem}
+          // onBlur={defaultItem}
           onClick={nullItem}
         ></input>
         <button onClick={() => dispatch(allActions.entryAction.addItem(item))}>Entry</button>
       </div>
-      {entryItem.teamList.map((team: any) => (
-        <div key={team}>{team}</div>
+      {entryItem.itemList.map((team: any) => (
+        <div key={item}>{item}</div>
       ))}
     </>
   );

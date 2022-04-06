@@ -4,7 +4,7 @@ type Act = {
 };
 
 const initialState = {
-  teamList: [],
+  itemList: [],
 };
 
 const addItem = (array: any, item: any) => {
@@ -20,12 +20,12 @@ const entryItem = (state: any = initialState, action: Act): any => {
     case 'ADD_ITEM':
       return {
         ...state,
-        teamList: addItem(state.teamList, action.payload),
+        itemList: addItem(state.itemList, action.payload),
       };
     case 'REMOVE_ITEM':
       return {
         ...state,
-        teamList: removeItem(state.teamList, action.payload),
+        itemList: removeItem(state.itemList, action.payload),
       };
     default:
       return state;

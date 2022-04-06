@@ -1,9 +1,12 @@
 import './App.css';
 import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
 
+import allActions from './actions';
 import Header from './components/Header';
 import Index from './components/Index';
+import Item from './components/Item';
 import Process from './components/Process';
 import Product from './components/Product';
 import Test from './components/Test';
@@ -18,6 +21,26 @@ const App: React.FC = () => {
   const [id, setId] = useState<number>(0);
   const [list, setList] = useState<Doc[]>([]);
   const [note, setNote] = useState<string | null>('');
+  const [item, setItem] = useState<string>('');
+
+  const entryItem = useSelector((state: any) => state.entryItem);
+  const dispatch = useDispatch();
+  const itemName = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (item) {
+      if (item.length < 33) {
+        setItem(event.target.value);
+        console.log(item);
+      }
+    }
+  };
+  const defaultItem = () => {
+    setItem(item.slice(1));
+    console.log(item);
+  };
+  const nullItem = () => {
+    setItem(' ');
+    console.log(item);
+  };
 
   const nullDocu = () => {
     setDocu(' ');
@@ -26,23 +49,8 @@ const App: React.FC = () => {
   const defaultDocu = () => {
     setDocu(docu.slice(1));
   };
-  const handleDocList = () => {
-    if (docu) {
-      setList([
-        ...list,
-        {
-          id: id,
-          name: docu,
-        },
-      ]);
-      sessionStorage.setItem(String(id), docu);
-      setDocu('');
-      setId(id + 1);
-    }
-  };
 
-  console.log(note);
-  console.log(sessionStorage);
+  console.log(entryItem.itemList);
 
   // ドキュメントの名前を入力して登録する
   const docuName = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -60,29 +68,33 @@ const App: React.FC = () => {
         <div className='Top'>
           <div className='TopContainer'>
             <div className='TopContainer__Left'>
+              {/* Reduxを使ったテスト */}
               <div className='TopHead'>
                 <div className='TopButton'>
                   <input
                     className='TopButton__name'
                     type='text'
                     id='name'
-                    onChange={docuName}
-                    value={!docu ? '新しいドキュメントを作成する' : docu}
-                    onBlur={defaultDocu}
-                    onClick={nullDocu}
+                    onChange={itemName}
+                    value={!item ? '新しいドキュメントを作成する' : item}
+                    onBlur={defaultItem}
+                    onClick={nullItem}
                   ></input>
-                  <button className='TopButton__button' type='submit' onClick={handleDocList}>
+                  <button
+                    onClick={() => dispatch(allActions.entryAction.addItem(item))}
+                    className='TopButton__button'
+                  >
                     作成する
                   </button>
                 </div>
                 <div className='TopHead__title'>＜ドキュメント一覧＞</div>
               </div>
               <ul className='TopList'>
-                {list.map((docu) => (
-                  <li key={docu.id} className='TopList__item'>
+                {entryItem.itemList.map((item: any) => (
+                  <li key={item} className='TopList__item'>
                     <div className='TopList__itemName'>
-                      <Link to={`./${docu.id}/${docu.name}`} className='TopList__itemName'>
-                        <p>{docu.name}</p>
+                      <Link to={`./${item}`} className='TopList__itemName'>
+                        <p>{item}</p>
                       </Link>
                     </div>
                   </li>
@@ -95,6 +107,7 @@ const App: React.FC = () => {
                 <Route path='/top' element={<Process />} />
                 <Route path='/test' element={<Test />} />
                 <Route path='/:id/:name' element={<Product />} />
+                <Route path='/:item' element={<Item />} />
               </Routes>
             </div>
           </div>
