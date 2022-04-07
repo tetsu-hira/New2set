@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams, useLocation } from 'react-router';
+import { useParams } from 'react-router';
 
 import allActions from '../actions';
 
@@ -17,11 +17,6 @@ type Pro = {
 
 const Item: React.FC = () => {
   const { item } = useParams<{ item: string }>();
-  const { id } = useParams<{ id: string | undefined }>();
-  const location = useLocation();
-
-  const [teamList, setTeamList] = useState<Pro[]>([]);
-  const [idNum, setIdNum] = useState<number>(1);
   const [team, setTeam] = useState<string>('');
 
   const entryTeam = useSelector((state: any) => state.entryTeam);
@@ -43,33 +38,12 @@ const Item: React.FC = () => {
     setTeam(team.slice(1));
   };
 
-  //チーム名を入力して登録する
-  // const teamName = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //   if (team.length < 33) {
-  //     setTeam(event.target.value);
-  //     console.log(team);
-  //   }
-  // };
-  // console.log(teamList);
-  // console.log(id);
-  // console.log(location);
-
-  const onButtonClick = () => {
-    const new_list = entryTeam.teamList.filter((list: any) =>
-      list.param.toString().indexOf(window.location.pathname),
-    );
-    console.log(entryTeam);
-    setTeamList(new_list);
-  };
-
-  console.log(entryTeam.teamList);
-  const teeeeam = entryTeam.teamList;
-  console.log(teamList);
+  const param = window.location.pathname;
+  const List = entryTeam.teamList.filter((item: any) => item.param === param);
 
   return (
     <>
       <div className='Product'>
-        {entryTeam.teamList.length > 0 && <div>{entryTeam.teamList[0].users}</div>}
         <div className='ProductTitle'>【{item}】</div>
         <div className='ProductContainer'>
           <div className='ProductButton'>
@@ -85,10 +59,7 @@ const Item: React.FC = () => {
             <button
               className='ProductButton__button'
               onClick={() => {
-                dispatch(allActions.teamAction.addTeam(team));
-                {
-                  onButtonClick;
-                }
+                dispatch(allActions.teamAction.addTeam(team, param));
               }}
             >
               登 録
@@ -105,19 +76,17 @@ const Item: React.FC = () => {
           </div>
           {entryTeam.teamList.length > 0 && (
             <ul className='List'>
-              {entryTeam.teamList
-                .filter((list: any) => list.param.toString().indexOf(window.location.pathname))
-                .map((team: any, idx: number) => (
-                  <li key={idx} className='ListTop'>
-                    <div className='ListBody id'>{idx + 1}</div>
-                    <div className='ListBody users'>{team.users}</div>
-                    <div className='ListBody point'>{team.point}</div>
-                    <div className='ListBody score'>{team.score}</div>
-                    <div className='ListBody times'>{team.times}</div>
-                    <div className='ListBody ratio'>{team.ratio}</div>
-                    <div className='ListBody count'>{team.count}</div>
-                  </li>
-                ))}
+              {List.map((team: any, idx: number) => (
+                <li key={idx} className='ListTop'>
+                  <div className='ListBody id'>{idx + 1}</div>
+                  <div className='ListBody users'>{team.users}</div>
+                  <div className='ListBody point'>{team.point}</div>
+                  <div className='ListBody score'>{team.score}</div>
+                  <div className='ListBody times'>{team.times}</div>
+                  <div className='ListBody ratio'>{team.ratio}</div>
+                  <div className='ListBody count'>{team.count}</div>
+                </li>
+              ))}
             </ul>
           )}
         </div>

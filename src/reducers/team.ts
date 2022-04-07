@@ -6,12 +6,16 @@ type Act = {
 const initialState = {
   teamList: [],
 };
+const path = window.location.pathname;
 
-const addTeam = (array: any, team: any) => {
+const addTeam = (array: any, team: any, param: any) => {
+  console.log(param);
+  console.log(array.filter((item: any) => item.param === param));
   return Array.from(
     new Set([
       ...array,
       {
+        ...array.param,
         users: team,
         point: 0,
         score: 0,
@@ -33,7 +37,7 @@ const entryTeam = (state: any = initialState, action: Act): any => {
     case 'ADD_Team':
       return {
         ...state,
-        teamList: addTeam(state.teamList, action.payload),
+        teamList: addTeam(state.teamList, action.payload, window.location.pathname),
       };
     case 'REMOVE_Team':
       return {
