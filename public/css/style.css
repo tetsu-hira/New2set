@@ -381,7 +381,7 @@ button {
 .Insert {
   display: flex;
   justify-content: space-around;
-  padding-bottom: 2em;
+  padding-top: 1em;
 }
 .InsertContent__text {
   font-weight: 600;
@@ -399,124 +399,95 @@ button {
   border: 1px solid #4d80b0;
   align-items: center;
   text-align: center;
-  margin: auto 7px;
-  box-shadow: 1px 1px 3px -1px rgba(0, 0, 0, 0.3);
+  margin: auto 1rem;
+  box-shadow: 1px 1px 2px -1px rgba(0, 0, 0, 0.3);
 }
 
 .Item {
-  background-color: #ededed;
-}
-@media screen and (max-width: 600px) {
-  .Item {
-    width: 327px;
-    margin: 4px auto;
-  }
-}
-.ItemList {
-  height: 40px;
-  margin: 4px 0;
   display: flex;
-  align-items: center;
+  background-color: #ffffff;
+  margin: auto 2rem 0.25rem;
 }
-.ItemList__data {
-  display: flex;
-  width: 100%;
-  background-color: #fff;
-  box-shadow: 2px 2px 2px #b9b8b8;
-}
-.ItemList__data .name {
+.Item .ItemHead {
   font-size: 1rem;
   color: #6c7686;
-  margin: auto 0;
+  margin: 1rem 0.4rem 0.4rem;
   text-align: center;
-  font-weight: 600;
-  width: 158px;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
-  line-height: 1;
-  padding: 0px 10px;
-}
-@media screen and (max-width: 600px) {
-  .ItemList__data .name {
-    font-size: 0.8em;
-    width: 136px;
-  }
-}
-.ItemList__data .gross {
-  font-size: 1rem;
-  width: 48px;
-  font-weight: 600;
   height: 36px;
-  line-height: 2.2;
-  margin: 0;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
-  text-align: center;
+  background-color: #efefef;
+  line-height: 35px;
 }
-@media screen and (max-width: 600px) {
-  .ItemList__data .gross {
-    font-size: 0.8em;
-    line-height: 2.8em;
-  }
+.Item .ItemHead.id {
+  width: 60px;
 }
-.ItemList__data .point {
-  font-size: 1rem;
-  width: 48px;
-  font-weight: 600;
-  height: 36px;
-  line-height: 2.2;
-  margin: 0;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
-  text-align: center;
+.Item .ItemHead.users {
+  min-width: 300px;
 }
-@media screen and (max-width: 600px) {
-  .ItemList__data .point {
-    font-size: 0.8em;
-    line-height: 2.8em;
-  }
+.Item .ItemHead.point {
+  width: 100px;
 }
-.ItemList__data .score {
+.Item .ItemHead.score {
+  width: 100px;
+}
+.Item .ItemHead.times {
+  width: 100px;
+}
+.Item .ItemHead.ratio {
+  width: 100px;
+}
+.Item .ItemHead.count {
+  width: 100px;
+}
+
+.List .ListTop {
+  display: flex;
+  background-color: #ffffff;
+  margin: auto 2rem 3px;
+  border-top: 1px solid #6c7686;
+}
+.List .ListTop:last-child {
+  border-bottom: 1px solid #6c7686;
+}
+.List .ListTop .ListBody {
   font-size: 1rem;
   color: #6c7686;
-  width: 48px;
-  font-weight: 600;
+  margin: auto 0.4rem;
+  text-align: center;
   height: 36px;
-  line-height: 2.2;
-  margin: 0;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
-  text-align: center;
+  line-height: 35px;
 }
-@media screen and (max-width: 600px) {
-  .ItemList__data .score {
-    font-size: 0.8em;
-    line-height: 2.8em;
-  }
+.List .ListTop .ListBody.id {
+  width: 60px;
 }
-.ItemList__data .AddPlan {
-  background: #4d80b0;
-  font-size: 12px;
-  width: 36px;
-  height: 32px;
-  line-height: 30px;
-  text-align: center;
+.List .ListTop .ListBody.users {
+  min-width: 300px;
+  text-align-last: left;
+  padding-left: 2rem;
+  position: relative;
+}
+.List .ListTop .ListBody.users .ListButton {
+  position: absolute;
+  top: 5px;
+  right: 3px;
+  background-color: #4d80b0;
   color: #fff;
-  border-top: 1px solid #4d80b0;
-  border-left: 1px solid #4d80b0;
-  border-bottom: 2px solid #4e709180;
-  border-right: 1px solid #4d80b0;
-  border-radius: 4px;
-  margin: auto;
-  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
+  padding: 6px 3px 3px;
+  border-radius: 35px;
 }
-.ItemList__data .AddPlan:hover {
-  cursor: pointer;
+.List .ListTop .ListBody.point {
+  width: 100px;
 }
-.ItemList__data .AddPlan:active {
-  -webkit-transform: translateY(1px);
-  transform: translateY(1px);
-  box-shadow: none;
-  border-top: 1px solid #cdd6df;
-  border-bottom: none;
+.List .ListTop .ListBody.score {
+  width: 100px;
+}
+.List .ListTop .ListBody.times {
+  width: 100px;
+}
+.List .ListTop .ListBody.ratio {
+  width: 100px;
+}
+.List .ListTop .ListBody.count {
+  width: 100px;
 }
 
 .Process {
@@ -1031,7 +1002,6 @@ button {
 }
 
 .Product {
-  min-height: 589px;
   width: 1040px;
 }
 .ProductTitle {
@@ -1051,12 +1021,15 @@ button {
   width: 90%;
   padding-bottom: 2rem;
 }
-.ProductContainer .ProductButton {
+.ProductContainer .ProductTop {
+  display: flex;
+}
+.ProductContainer .ProductTop .ProductButton {
   display: flex;
   margin: auto 2em 1em;
-  padding-top: 2em;
+  padding-top: 2.7em;
 }
-.ProductContainer .ProductButton__name {
+.ProductContainer .ProductTop .ProductButton__name {
   height: 40px;
   border: 1px solid #4d80b0;
   display: block;
@@ -1065,13 +1038,14 @@ button {
   margin-right: 16px;
   padding-left: 8px;
   line-height: 20px;
+  box-shadow: 1px 1px 2px -1px rgba(0, 0, 0, 0.3);
 }
 @media screen and (max-width: 600px) {
-  .ProductContainer .ProductButton__name {
+  .ProductContainer .ProductTop .ProductButton__name {
     width: 160px;
   }
 }
-.ProductContainer .ProductButton__button {
+.ProductContainer .ProductTop .ProductButton__button {
   background: #4d80b0;
   font-size: 16px;
   width: 100px;
@@ -1082,92 +1056,338 @@ button {
   border: 1px solid #4d80b0;
 }
 @media screen and (max-width: 600px) {
-  .ProductContainer .ProductButton__button {
+  .ProductContainer .ProductTop .ProductButton__button {
     width: 67px;
     font-size: 16px;
     padding-left: 2px;
     line-height: 20px;
   }
 }
-.ProductContainer .ProductButton__button:hover {
+.ProductContainer .ProductTop .ProductButton__button:hover {
   background-color: #ffffff;
   color: #4d80b0;
   transition: all 0.5s ease;
 }
-.ProductContainer .Item {
+
+.Result {
+  width: 937px;
+  max-height: 360px;
+  overflow: auto;
+  flex: 2;
+  margin-left: 51px;
+  padding-top: 16px;
+  background-color: #fff;
+  box-shadow: 0 1px 3px gray;
   display: flex;
-  background-color: #ffffff;
-  margin: auto 2rem 0.25rem;
+  flex-wrap: wrap;
+  margin-bottom: 3em;
 }
-.ProductContainer .Item .ItemHead {
-  font-size: 1rem;
-  color: #6c7686;
-  margin: 1rem 0.4rem 0.4rem;
+.Result .title {
+  margin: 0;
+  padding-left: 60px;
+  width: 800px;
+}
+@media screen and (max-width: 600px) {
+  .Result .title {
+    font-size: 1.2em;
+    width: auto;
+    padding-left: 0;
+  }
+}
+.Result .DeleteButton {
+  background: #4d80b0;
+  font-size: 0.8rem;
+  width: 36px;
+  height: 22px;
   text-align: center;
-  height: 36px;
-  background-color: #efefef;
-  line-height: 35px;
+  color: #fff;
+  border-radius: 4px;
+  margin: auto;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
-.ProductContainer .Item .ItemHead.id {
+.Result .DeleteButton:hover {
+  cursor: pointer;
+}
+.Result .DeleteButton:active {
+  -webkit-transform: translateY(1px);
+  transform: translateY(1px);
+  box-shadow: none;
+  border-top: none;
+  border-bottom: none;
+}
+.Result .Result__Border {
+  padding-top: 5px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.Result .Result__Border .Result__Flex .Flex {
+  display: flex;
+  margin-bottom: 1em;
+  padding-bottom: 10px;
+  padding-top: 8px;
+}
+@media screen and (max-width: 600px) {
+  .Result .Result__Border .Result__Flex .Flex {
+    justify-content: space-around;
+    width: 48%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .Result .Result__Border .Result__Flex .Flex.left {
+    justify-content: flex-end;
+  }
+}
+.Result .Result__Border .Result__Flex .Flex.right {
+  padding-right: 16px;
+}
+@media screen and (max-width: 600px) {
+  .Result .Result__Border .Result__Flex .Flex.right {
+    justify-content: flex-start;
+    padding-right: 0;
+  }
+}
+.Result .Result__Border .Result__Flex .FlexCount {
+  height: 72px;
+  width: auto;
+}
+.Result .Result__Border .Result__Flex .FlexCount__Button {
+  display: flex;
+  height: 36px;
+  width: 80px;
+}
+@media screen and (max-width: 600px) {
+  .Result .Result__Border .Result__Flex .FlexCount__Button {
+    display: block;
+    width: 48px;
+    position: relative;
+  }
+}
+.Result .Result__Border .Result__Flex .FlexCount__Button .SubCount {
+  background-color: #4d80b0;
+  width: 28px;
+  height: 28px;
+  line-height: 24px;
+  border-radius: 50%;
+  margin: auto;
+  padding: 0;
+}
+@media screen and (max-width: 600px) {
+  .Result .Result__Border .Result__Flex .FlexCount__Button .SubCount {
+    display: flex;
+    width: 36px;
+    height: 18px;
+    border-bottom: 1px solid #5a687480;
+    border-radius: 50%/0 0 100% 100%;
+    margin: auto 3px;
+    position: absolute;
+    left: 3px;
+    top: 24px;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    align-items: center;
+  }
+}
+.Result .Result__Border .Result__Flex .FlexCount__Button .SubCount.bottom {
+  color: #fff;
+  font-size: 1.5rem;
+  font-family: "游ゴシック", YuGothic, "游ゴシック体";
+  font-weight: bold;
+}
+.Result .Result__Border .Result__Flex .FlexCount__Button .SubCount:hover {
+  cursor: pointer;
+}
+.Result .Result__Border .Result__Flex .FlexCount__Button .SubCount:active {
+  -webkit-transform: translateY(1px);
+  transform: translateY(1px);
+  box-shadow: none;
+  border-bottom: 2px solid #efefef;
+}
+.Result .Result__Border .Result__Flex .FlexCount__Button .SubCount.top {
+  color: #fff;
+  font-size: 1.5rem;
+  font-family: "游ゴシック", YuGothic, "游ゴシック体";
+  font-weight: bold;
+}
+.Result .Result__Border .Result__Flex .FlexCount__Button .AddCount {
+  background-color: #4d80b0;
+  width: 28px;
+  height: 28px;
+  line-height: 25px;
+  border-radius: 50%;
+  margin: auto;
+  padding: 0;
+}
+@media screen and (max-width: 600px) {
+  .Result .Result__Border .Result__Flex .FlexCount__Button .AddCount {
+    display: flex;
+    width: 36px;
+    height: 18px;
+    border-bottom: 1px solid #5a687480;
+    border-radius: 50%/100% 100% 0 0;
+    margin: auto 3px;
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    align-items: center;
+  }
+}
+.Result .Result__Border .Result__Flex .FlexCount__Button .AddCount.bottom {
+  color: #fff;
+  font-size: 1.5rem;
+}
+.Result .Result__Border .Result__Flex .FlexCount__Button .AddCount:hover {
+  cursor: pointer;
+}
+.Result .Result__Border .Result__Flex .FlexCount__Button .AddCount:active {
+  -webkit-transform: translateY(1px);
+  transform: translateY(1px);
+  box-shadow: none;
+  border-bottom: 2px solid #efefef;
+}
+.Result .Result__Border .Result__Flex .FlexCount__Button .AddCount.top {
+  color: #fff;
+  font-size: 1.5rem;
+}
+.Result .Result__Border .Result__Flex .FlexCount__Point {
+  display: flex;
+  height: 36px;
   width: 60px;
 }
-.ProductContainer .Item .ItemHead.users {
-  min-width: 300px;
+@media screen and (max-width: 600px) {
+  .Result .Result__Border .Result__Flex .FlexCount__Point {
+    display: block;
+    width: 32px;
+    position: relative;
+  }
 }
-.ProductContainer .Item .ItemHead.point {
-  width: 100px;
+.Result .Result__Border .Result__Flex .FlexCount__Point .ResultTime {
+  width: 60px;
+  margin: auto;
+  font-size: 21px;
+  background-color: #efefef;
 }
-.ProductContainer .Item .ItemHead.score {
-  width: 100px;
+@media screen and (max-width: 600px) {
+  .Result .Result__Border .Result__Flex .FlexCount__Point .ResultTime {
+    width: 30px;
+    font-size: 1.2em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+  }
 }
-.ProductContainer .Item .ItemHead.times {
-  width: 100px;
+.Result .Result__Border .Result__Flex .FlexName {
+  color: #6c7686;
+  width: 180px;
+  margin: auto 1rem;
 }
-.ProductContainer .Item .ItemHead.ratio {
-  width: 100px;
+@media screen and (max-width: 600px) {
+  .Result .Result__Border .Result__Flex .FlexName {
+    width: 88px;
+    font-weight: 600;
+    font-size: 1em;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+  }
 }
-.ProductContainer .Item .ItemHead.count {
-  width: 100px;
+.Result .Result__Border .Result__Flex .FlexName .ResultIndex {
+  border: 1px solid #4d80b0;
+  width: 60px;
+  margin: 5px auto;
+  height: 30px;
+  box-shadow: 0px 1px 3px 0 rgba(0, 0, 0, 0.25);
 }
-.ProductContainer .List .ListTop {
-  display: flex;
-  background-color: #ffffff;
-  margin: auto 2rem 3px;
+.Result .Result__Border .Result__Flex .FlexName .ResultName {
+  font-size: 1rem;
+  width: 178px;
+  height: 50px;
+  line-height: 1;
+  margin: 11px auto;
+  color: #6c7686;
+  position: relative;
   border-top: 1px solid #6c7686;
-}
-.ProductContainer .List .ListTop:last-child {
   border-bottom: 1px solid #6c7686;
 }
-.ProductContainer .List .ListTop .ListBody {
-  font-size: 1rem;
-  color: #6c7686;
-  margin: auto 0.4rem;
-  text-align: center;
-  height: 36px;
-  line-height: 35px;
+@media screen and (max-width: 600px) {
+  .Result .Result__Border .Result__Flex .FlexName .ResultName {
+    font-size: 0.8em;
+    width: auto;
+    line-height: 1.2;
+    margin: 4px auto;
+  }
 }
-.ProductContainer .List .ListTop .ListBody.id {
+.Result .Result__Border .Result__Flex .FlexName .ResultName__text {
+  overflow-wrap: break-word;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+.Result .Result__Border .Result__Flex .FlexCross {
+  height: 72px;
+}
+@media screen and (max-width: 600px) {
+  .Result .Result__Border .Result__Flex .FlexCross {
+    display: none;
+    width: 2%;
+    border-bottom: 1px solid #6c7686;
+    height: 105px;
+  }
+}
+.Result .Result__Border .Result__Flex .FlexCross__item {
   width: 60px;
+  height: 36px;
+  line-height: 30px;
+  font-size: 2em;
+  position: relative;
+  color: #6c7686;
 }
-.ProductContainer .List .ListTop .ListBody.users {
-  min-width: 300px;
-  text-align-last: left;
-  padding-left: 2rem;
+@media screen and (max-width: 600px) {
+  .Result .Result__Border .Result__Flex .FlexCross__item {
+    width: auto;
+    position: relative;
+  }
 }
-.ProductContainer .List .ListTop .ListBody.point {
-  width: 100px;
+.Result .Result__Border .Result__Flex .FlexCross__item .CrossText {
+  position: absolute;
+  top: 51%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.8em;
 }
-.ProductContainer .List .ListTop .ListBody.score {
-  width: 100px;
+.Result .Result__Border .Result__Flex .Flex .FlexNumber {
+  height: 72px;
+  width: 60px;
+  position: relative;
 }
-.ProductContainer .List .ListTop .ListBody.times {
-  width: 100px;
+@media screen and (max-width: 600px) {
+  .Result .Result__Border .Result__Flex .Flex .FlexNumber {
+    margin: auto 2px auto 6px;
+    display: none;
+  }
 }
-.ProductContainer .List .ListTop .ListBody.ratio {
-  width: 100px;
+.Result .Result__Border .Result__Flex .Flex .FlexNumber__item {
+  width: 60px;
+  line-height: 1.5;
+  font-size: 0.8em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
 }
-.ProductContainer .List .ListTop .ListBody.count {
-  width: 100px;
+@media screen and (max-width: 600px) {
+  .Result .Result__Border .Result__Flex .Flex .FlexNumber__item {
+    width: 20px;
+    line-height: 1.2;
+    font-size: 0.8em;
+  }
 }
 
 .Top {

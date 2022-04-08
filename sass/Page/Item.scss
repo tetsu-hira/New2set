@@ -1,113 +1,37 @@
 .Item {
-  background-color: $BackColor;
-  @include mq() {
-    width: 327px;
-    margin: 4px auto;
-  }
-  &List {
-    height: 40px;
-    margin: 4px 0;
-    display: flex;
-    align-items: center;
-    &__data {
-      display: flex;
-      width: 100%;
-      background-color: $WhiteColor;
-      // box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.3);
-      // box-shadow: 0 1px 3px gray;
-      box-shadow: 2px 2px 2px #b9b8b8;
-      .name {
-        font-size: 1rem;
-        color: $FontColor;
-        margin: auto 0;
-        text-align: center;
-        // padding-left: 12px;
-        font-weight: 600;
-        width: 158px;
-        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
-        line-height: 1;
-        padding: 0px 10px;
-        @include mq() {
-          font-size: 0.8em;
-          width: 136px;
-        }
-      }
-      .gross {
-        font-size: 1rem;
-        width: 48px;
-        font-weight: 600;
-        height: 36px;
-        line-height: 2.2;
-        // background: $ChangeColor;
-        margin: 0;
-        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
-        text-align: center;
-        @include mq() {
-          font-size: 0.8em;
-          line-height: 2.8em;
-        }
-      }
-      .point {
-        font-size: 1rem;
-        width: 48px;
-        font-weight: 600;
-        height: 36px;
-        line-height: 2.2;
-        // background: $ChangeColor;
-        margin: 0;
-        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
-        text-align: center;
-        @include mq() {
-          font-size: 0.8em;
-          line-height: 2.8em;
-        }
-      }
-      .score {
-        font-size: 1rem;
-        color: $FontColor;
-        width: 48px;
-        font-weight: 600;
-        height: 36px;
-        line-height: 2.2;
-        // background: $ChangeColor;
-        margin: 0;
-        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
-        text-align: center;
-        @include mq() {
-          font-size: 0.8em;
-          line-height: 2.8em;
-        }
-      }
-      .AddPlan {
-        background: $PrimaryColor;
-        font-size: 12px;
-        width: 36px;
-        height: 32px;
-        line-height: 30px;
-        text-align: center;
-        color: $WhiteColor;
-        // font-weight: 600;
-        // text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.65);
-        border-top: 1px solid $PrimaryColor;
-        border-left: 1px solid $PrimaryColor;
-        border-bottom: 2px solid #4e709180;
-        border-right: 1px solid $PrimaryColor;
-        border-radius: 4px;
-        margin: auto;
-        box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 15%);
-        -webkit-transform-style: preserve-3d;
-        transform-style: preserve-3d;
-        &:hover {
-          cursor: pointer;
-        }
-        &:active {
-          -webkit-transform: translateY(1px);
-          transform: translateY(1px);
-          box-shadow: none;
-          border-top: 1px solid #cdd6df;
-          border-bottom: none;
-        }
-      }
+  display: flex;
+  background-color: #ffffff;
+  margin: auto 2rem 0.25rem;
+  .ItemHead {
+    font-size: 1rem;
+    color: $FontColor;
+    margin: 1rem 0.4rem 0.4rem;
+    text-align: center;
+    height: 36px;
+    background-color: $SubColor;
+    line-height: 35px;
+    // box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.15);
+    // border: 1px solid $FontColor;
+    &.id {
+      width: 60px;
+    }
+    &.users {
+      min-width: 300px;
+    }
+    &.point {
+      width: 100px;
+    }
+    &.score {
+      width: 100px;
+    }
+    &.times {
+      width: 100px;
+    }
+    &.ratio {
+      width: 100px;
+    }
+    &.count {
+      width: 100px;
     }
   }
 }
