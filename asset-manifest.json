@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/New2set/static/css/main.a0f92c83.chunk.css",
+    "main.js": "/New2set/static/js/main.cee125bb.chunk.js",
+    "main.js.map": "/New2set/static/js/main.cee125bb.chunk.js.map",
+    "runtime-main.js": "/New2set/static/js/runtime-main.1fb3b490.js",
+    "runtime-main.js.map": "/New2set/static/js/runtime-main.1fb3b490.js.map",
+    "static/js/2.b6fa2d3a.chunk.js": "/New2set/static/js/2.b6fa2d3a.chunk.js",
+    "static/js/2.b6fa2d3a.chunk.js.map": "/New2set/static/js/2.b6fa2d3a.chunk.js.map",
+    "static/js/3.38e24d03.chunk.js": "/New2set/static/js/3.38e24d03.chunk.js",
+    "static/js/3.38e24d03.chunk.js.map": "/New2set/static/js/3.38e24d03.chunk.js.map",
+    "index.html": "/New2set/index.html",
+    "static/css/main.a0f92c83.chunk.css.map": "/New2set/static/css/main.a0f92c83.chunk.css.map",
+    "static/js/2.b6fa2d3a.chunk.js.LICENSE.txt": "/New2set/static/js/2.b6fa2d3a.chunk.js.LICENSE.txt",
+    "static/media/sita.056395d9.svg": "/New2set/static/media/sita.056395d9.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1fb3b490.js",
+    "static/js/2.b6fa2d3a.chunk.js",
+    "static/css/main.a0f92c83.chunk.css",
+    "static/js/main.cee125bb.chunk.js"
+  ]
+}
