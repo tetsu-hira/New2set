@@ -67,6 +67,87 @@ button {
   appearance: none;
 }
 
+.upButton {
+  position: fixed;
+  font-size: 2rem;
+  bottom: 3em;
+  right: 2rem;
+  background-color: #4d80b0;
+  width: 40px;
+  height: 40px;
+  z-index: 999;
+  text-align: center;
+  color: #fff;
+  border: 1px solid #4d80b0;
+  box-shadow: 2px 1px 5px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+}
+.upButton:after {
+  content: "";
+  width: 11px;
+  height: 11px;
+  border: 2px solid;
+  border-color: #fff #fff transparent transparent;
+  transform: rotate(-45deg);
+  position: relative;
+  display: inline-block;
+  top: -9px;
+}
+.upButton:hover {
+  background-color: #ffffff;
+  color: #4d80b0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.upButton:hover::after {
+  border-color: #4d80b0 #4d80b0 transparent transparent;
+  color: #4d80b0;
+  transition: all 0.3s ease;
+}
+
+.downButton {
+  position: fixed;
+  font-size: 2rem;
+  bottom: 1.5em;
+  right: 2rem;
+  background-color: #4d80b0;
+  width: 40px;
+  height: 40px;
+  z-index: 999;
+  text-align: center;
+  color: #fff;
+  border: 1px solid #4d80b0;
+  box-shadow: 2px 1px 5px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+}
+@media screen and (max-width: 600px) {
+  .downButton {
+    display: block;
+  }
+}
+.downButton:after {
+  content: "";
+  width: 11px;
+  height: 11px;
+  border: 2px solid;
+  border-color: #fff #fff transparent transparent;
+  transform: rotate(135deg);
+  position: relative;
+  display: inline-block;
+  top: -16px;
+}
+.downButton:hover {
+  background-color: #ffffff;
+  color: #4d80b0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.downButton:hover::after {
+  border-color: #4d80b0 #4d80b0 transparent transparent;
+  color: #4d80b0;
+  transition: all 0.3s ease;
+}
+
 .Footer {
   bottom: 0;
   width: 100%;
@@ -386,16 +467,10 @@ button {
 .InsertContent__text {
   font-weight: 600;
 }
-@media screen and (max-width: 600px) {
-  .InsertContent__text {
-    font-size: 1em;
-    font-weight: 400;
-  }
-}
 .InsertContent__entry {
   color: #6c7686;
   width: 48px;
-  height: 40px;
+  height: 36px;
   border: 1px solid #4d80b0;
   align-items: center;
   text-align: center;
@@ -410,12 +485,13 @@ button {
 }
 .Item .ItemHead {
   font-size: 1rem;
-  color: #6c7686;
+  color: #fff;
   margin: 1rem 0.4rem 0.4rem;
   text-align: center;
   height: 36px;
-  background-color: #efefef;
+  background-color: #4d80b0;
   line-height: 35px;
+  border: 1px solid #4d80b0;
 }
 .Item .ItemHead.id {
   width: 60px;
@@ -423,20 +499,50 @@ button {
 .Item .ItemHead.users {
   min-width: 300px;
 }
+.Item .ItemHead.users:hover {
+  background-color: #ffffff;
+  color: #4d80b0;
+  transition: all 0.5s ease;
+}
 .Item .ItemHead.point {
   width: 100px;
+}
+.Item .ItemHead.point:hover {
+  background-color: #ffffff;
+  color: #4d80b0;
+  transition: all 0.5s ease;
 }
 .Item .ItemHead.score {
   width: 100px;
 }
+.Item .ItemHead.score:hover {
+  background-color: #ffffff;
+  color: #4d80b0;
+  transition: all 0.5s ease;
+}
 .Item .ItemHead.times {
   width: 100px;
+}
+.Item .ItemHead.times:hover {
+  background-color: #ffffff;
+  color: #4d80b0;
+  transition: all 0.5s ease;
 }
 .Item .ItemHead.ratio {
   width: 100px;
 }
+.Item .ItemHead.ratio:hover {
+  background-color: #ffffff;
+  color: #4d80b0;
+  transition: all 0.5s ease;
+}
 .Item .ItemHead.count {
   width: 100px;
+}
+.Item .ItemHead.count:hover {
+  background-color: #ffffff;
+  color: #4d80b0;
+  transition: all 0.5s ease;
 }
 
 .List .ListTop {
@@ -1030,14 +1136,14 @@ button {
   padding-top: 2.7em;
 }
 .ProductContainer .ProductTop .ProductButton__name {
-  height: 40px;
+  height: 36px;
   border: 1px solid #4d80b0;
   display: block;
   width: 300px;
   color: #6c7686;
   margin-right: 16px;
   padding-left: 8px;
-  line-height: 20px;
+  line-height: 18px;
   box-shadow: 1px 1px 2px -1px rgba(0, 0, 0, 0.3);
 }
 @media screen and (max-width: 600px) {
@@ -1049,19 +1155,11 @@ button {
   background: #4d80b0;
   font-size: 16px;
   width: 100px;
-  height: 40px;
-  line-height: 20px;
+  height: 36px;
+  line-height: 18px;
   text-align: center;
   color: #fff;
   border: 1px solid #4d80b0;
-}
-@media screen and (max-width: 600px) {
-  .ProductContainer .ProductTop .ProductButton__button {
-    width: 67px;
-    font-size: 16px;
-    padding-left: 2px;
-    line-height: 20px;
-  }
 }
 .ProductContainer .ProductTop .ProductButton__button:hover {
   background-color: #ffffff;
@@ -1156,13 +1254,6 @@ button {
   height: 36px;
   width: 80px;
 }
-@media screen and (max-width: 600px) {
-  .Result .Result__Border .Result__Flex .FlexCount__Button {
-    display: block;
-    width: 48px;
-    position: relative;
-  }
-}
 .Result .Result__Border .Result__Flex .FlexCount__Button .SubCount {
   background-color: #4d80b0;
   width: 28px;
@@ -1171,22 +1262,9 @@ button {
   border-radius: 50%;
   margin: auto;
   padding: 0;
-}
-@media screen and (max-width: 600px) {
-  .Result .Result__Border .Result__Flex .FlexCount__Button .SubCount {
-    display: flex;
-    width: 36px;
-    height: 18px;
-    border-bottom: 1px solid #5a687480;
-    border-radius: 50%/0 0 100% 100%;
-    margin: auto 3px;
-    position: absolute;
-    left: 3px;
-    top: 24px;
-    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1);
-    justify-content: center;
-    align-items: center;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .Result .Result__Border .Result__Flex .FlexCount__Button .SubCount.bottom {
   color: #fff;
@@ -1217,22 +1295,9 @@ button {
   border-radius: 50%;
   margin: auto;
   padding: 0;
-}
-@media screen and (max-width: 600px) {
-  .Result .Result__Border .Result__Flex .FlexCount__Button .AddCount {
-    display: flex;
-    width: 36px;
-    height: 18px;
-    border-bottom: 1px solid #5a687480;
-    border-radius: 50%/100% 100% 0 0;
-    margin: auto 3px;
-    position: absolute;
-    left: 3px;
-    top: 3px;
-    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
-    justify-content: center;
-    align-items: center;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .Result .Result__Border .Result__Flex .FlexCount__Button .AddCount.bottom {
   color: #fff;
