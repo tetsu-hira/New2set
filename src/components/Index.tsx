@@ -1,5 +1,4 @@
-import * as React from 'react';
-import { Provider, useSelector, useDispatch } from 'react-redux';
+import React, { useState } from 'react';
 import { createStore } from 'redux';
 
 interface Num {
@@ -29,35 +28,20 @@ const reducer = (state: any, action: Num) => {
 const store = createStore(reducer, initialState);
 
 const Index: React.FC = () => {
+  const [count, setCount] = useState(0);
+
   return (
     <>
-      <div>HOME</div>
-      <h2>ComponentUseReactRedux</h2>
-      <Provider store={store}>
-        <ChildComponentUseReactRedux />
-      </Provider>
+      <p>{count}</p>
+      <button
+        onClick={() => {
+          console.log();
+          setCount(window.myAPI.counter(count));
+        }}
+      >
+        count
+      </button>
     </>
-  );
-};
-
-const ChildComponentUseReactRedux = () => {
-  const selector = (state: any) => {
-    return state.num;
-  };
-
-  const num = useSelector(selector);
-  const item = useSelector(selector);
-
-  const dispatch = useDispatch();
-  return (
-    <div>
-      <h3>Using useSelector, useDispatch</h3>
-      Number: {num}
-      Test:{item}
-      <button onClick={() => dispatch({ type: 'increment' })}>+</button>
-      <button onClick={() => dispatch({ type: 'decrement' })}>-</button>
-      <button onClick={() => dispatch({ type: 'test' })}>teeeest</button>
-    </div>
   );
 };
 

@@ -1,7 +1,20 @@
 {
   "name": "2set",
   "version": "0.1.0",
+  "main": "build/electron/electron.js",
+  "homepage": "./",
   "private": true,
+  "author": "Tetsuhiro Hirabayashi",
+  "description": "...",
+  "build": {
+    "extends": null,
+    "files": [
+      "build/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -29,6 +42,9 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
+    "electron:dev": "concurrently \"cross-env BROWSER=none npm start\" \"wait-on http://localhost:3000 && tsc -p electron -w\" \"wait-on http://localhost:3000 && tsc -p electron && electron .\"",
+    "electron:build:portable": "yarn build && tsc -p electron && electron-builder --win --x64 --dir",
+    "electron:build:nis": "yarn build && tsc -p electron && electron-builder --win --x64",
     "predeploy": "npm run build",
     "deploy": "gh-pages master -d build",
     "start": "react-scripts start",
@@ -47,14 +63,10 @@
   },
   "browserslist": {
     "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
+      "last 1 electron version"
     ],
     "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
+      "last 1 electron version"
     ]
   },
   "prettier": {
@@ -66,7 +78,12 @@
     "printWidth": 100
   },
   "devDependencies": {
+    "concurrently": "^7.1.0",
+    "cross-env": "^7.0.3",
+    "electron": "^18.0.3",
+    "electron-builder": "^23.0.3",
     "eslint-config-prettier": "^8.5.0",
-    "prettier": "^2.5.1"
+    "prettier": "^2.5.1",
+    "wait-on": "^6.0.1"
   }
 }
